@@ -13,11 +13,15 @@ class App extends Component {
         generalInfo:{
           firstName:'',
           lastName:'',
+          email:'',
+          phone:''
         },
       },
       generalInfo:{
         firstName:'',
-        lastName:''
+        lastName:'',
+        email:'',
+        phone:''
       }   
   };
 }
@@ -26,7 +30,9 @@ class App extends Component {
     this.setState({
         generalInfo:{
           firstName:e.target.id === 'first-name' ? e.target.value : this.state.generalInfo.firstName,
-          lastName: e.target.id === 'last-name' ? e.target.value : this.state.generalInfo.lastName
+          lastName: e.target.id === 'last-name' ? e.target.value : this.state.generalInfo.lastName,
+          email: e.target.id === 'email' ? e.target.value : this.state.generalInfo.email,
+          phone: e.target.id === 'phone' ? e.target.value : this.state.generalInfo.phone,
         }
     });
   };
@@ -41,13 +47,14 @@ class App extends Component {
         user:{
           generalInfo: this.state.generalInfo
         },
-        generalInfo: {firstName: '', lastName: ''}, 
+        generalInfo: {firstName: '', lastName: '', email: '', phone: ''}, 
     });
 
   };
 
+
   render() {
-    const { firstName, lastName } = this.state.generalInfo;
+    const { firstName, lastName, email, phone } = this.state.generalInfo;
     const {user} = this.state;
 
     return (
@@ -68,6 +75,24 @@ class App extends Component {
             type="text"
             id="last-name"
           />
+
+          <label htmlFor="email">e-mail</label>
+          <input
+            onChange={this.handleChange}
+            value={email}
+            type="email"
+            id="email"
+          />
+
+          <label htmlFor="phone">phone number</label>
+          <input
+            onChange={this.handleChange}
+            value={phone}
+            type="phone"
+            id="phone"
+          />
+
+
 
           <button type="submit">Submit</button>
         </form>
