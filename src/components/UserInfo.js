@@ -7,12 +7,17 @@ class UserInfo extends Component {
   // }
 
   render(){
-    
-    const { firstName} = this.props;
+ 
+    const {generalInfo}= this.props.user;
     
     return(
       <div>
+        {
+         Object.keys(generalInfo).map(key=>{
 
+          return (<p>{generalInfo[key]}</p>);
+         })
+        }
       </div>
     )
   }
