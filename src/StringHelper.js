@@ -1,3 +1,9 @@
+const StringHelper = (()=>{
+  const dashToCamelCase = ()=>{
+    
+  }
+})();
+
 String.prototype.dashToCamelCase = function(){
     const that = this.toString();
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
 import uniqid from "uniqid";
-import String from "./String";
+import String from "./StringHelper";
 
 class App extends Component {
   constructor() {
