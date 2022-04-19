@@ -12,12 +12,7 @@ class App extends Component {
 
     this.state = {
       user:{
-        generalInfo:{
-          fullName: '',
-          email:'',
-          phone:'',
-          id:''
-        },
+        generalInfo:{},
       },
       generalInfo:{
         fullName: '',
@@ -53,14 +48,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-          <GeneralForm 
-        generalInfo = {this.state.generalInfo}
-        user = {this.state}
-        handleChange={this.handleChange.bind(this)}
-        onSubmitTask={this.onSubmitTask.bind(this)}
-
+      <div id="content">
+        <GeneralForm 
+          generalInfo = {this.state.generalInfo}
+          user = {this.state}
+          handleChange={this.handleChange.bind(this)}
+          onSubmitTask={this.onSubmitTask.bind(this)}
         />
+        
         <CV user ={this.state.user}/>
       </div>
     );

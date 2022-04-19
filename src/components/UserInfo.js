@@ -1,20 +1,19 @@
-import React, {Component} from "react";
+import React from "react";
 
-
-class UserInfo extends Component {
+const UserInfo = (props)=> {
   
-  render(){
-    const {generalInfo} = this.props;
-    return(
-      <ul key={generalInfo.id} id="general-info">
-        {
-         Object.keys(generalInfo).filter((key)=> key !== "id").map(key=>{
-            return (<li>{generalInfo[key]}</li>);
-         })
-        }
-      </ul>
-    )
-  }
-};
+  const {generalInfo} = props;
+
+  return(
+    <ul key={generalInfo.id} id="general-info">
+      {
+        Object.keys(generalInfo).filter((key)=> key !== "id").map(key=>{
+          return (<li id={key}>{generalInfo[key]}</li>);
+        })
+      }
+    </ul>
+  )
+}
+
 
 export default UserInfo;
