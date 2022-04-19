@@ -1,10 +1,8 @@
-// App.js
-
 import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
-
 import uniqid from "uniqid";
+import String from "./String";
 
 class App extends Component {
   constructor() {
@@ -42,9 +40,7 @@ class App extends Component {
         },
         generalInfo: {fullName:'', email: '', phone: '', id: uniqid()}, 
     });
-
   };
-
 
   render() {
     return (
@@ -55,7 +51,7 @@ class App extends Component {
           handleChange={this.handleChange.bind(this)}
           onSubmitTask={this.onSubmitTask.bind(this)}
         />
-        
+
         <CV user ={this.state.user}/>
       </div>
     );
