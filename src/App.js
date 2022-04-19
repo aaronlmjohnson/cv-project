@@ -13,27 +13,28 @@ class App extends Component {
         generalInfo:{},
       },
       generalInfo:{
-        fullName: '',
-        email:'',
-        phone:'',
+        fullName: {text:'', id: uniqid()},
+        email:{text:'', id: uniqid()},
+        phone:{text:'', id: uniqid()},
         id:uniqid()
       }   
   };
 }
 
   handleChange = (e) => {
+    const generalInfo = this.state.generalInfo;
     this.setState({
         generalInfo:{
-          fullName:this.setActiveField(e, 'full-name'),
-          email: this.setActiveField(e, 'email'),
-          phone: this.setActiveField(e, 'phone'),
-          id:this.state.generalInfo.id
+          fullName:{text: this.setActiveField(e, 'full-name'), id: generalInfo.fullName.id},
+          email: {text: this.setActiveField(e, 'email'), id: generalInfo.email.id},
+          phone: {text: this.setActiveField(e, 'phone'), id: generalInfo.phone.id},
+          id:generalInfo.id
         }
     });
   };
 
   setActiveField = (e, fieldId)=>{
-    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[fieldId.dashToCamelCase()];
+    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[fieldId.dashToCamelCase()].text;
   }
 
   onSubmitTask = (e) => {
@@ -42,7 +43,12 @@ class App extends Component {
         user:{
           generalInfo: this.state.generalInfo
         },
-        generalInfo: {fullName:'', email: '', phone: '', id: uniqid()}, 
+        generalInfo: {
+          fullName:{text:'', id: uniqid()},
+          email: {text:'', id: uniqid()},
+          phone: {text:'', id: uniqid()},
+          id: uniqid()
+        }, 
     });
   };
 

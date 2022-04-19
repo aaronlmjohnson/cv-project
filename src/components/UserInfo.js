@@ -8,7 +8,7 @@ const UserInfo = (props)=> {
     <ul key={generalInfo.id} id="general-info">
       {
         Object.keys(generalInfo).filter((key)=> key !== "id").map(key=>{
-          return (<li id={key}>{generalInfo[key]}</li>);
+          return (<li id={key} key={generalInfo[key].id}>{generalInfo[key].text}</li>);
         })
       }
     </ul>
