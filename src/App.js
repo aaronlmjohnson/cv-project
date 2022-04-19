@@ -1,8 +1,8 @@
 // App.js
 
 import React, { Component } from "react";
+import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
-import UserInfo from "./components/UserInfo";
 
 //import uniqid from "uniqid";
 
@@ -58,7 +58,7 @@ class App extends Component {
         onSubmitTask={this.onSubmitTask.bind(this)}
 
         />
-        <UserInfo generalInfo = {this.state.user.generalInfo}/>
+        <CV user ={this.state.user}/>
       </div>
     );
   }
