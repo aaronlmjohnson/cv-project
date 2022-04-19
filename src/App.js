@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
 
-//import uniqid from "uniqid";
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor() {
@@ -15,13 +15,15 @@ class App extends Component {
         generalInfo:{
           fullName: '',
           email:'',
-          phone:''
+          phone:'',
+          id:''
         },
       },
       generalInfo:{
         fullName: '',
         email:'',
-        phone:''
+        phone:'',
+        id:uniqid()
       }   
   };
 }
@@ -32,6 +34,7 @@ class App extends Component {
           fullName:e.target.id === 'full-name' ? e.target.value : this.state.generalInfo.fullName,
           email: e.target.id === 'email' ? e.target.value : this.state.generalInfo.email,
           phone: e.target.id === 'phone' ? e.target.value : this.state.generalInfo.phone,
+          id:this.state.generalInfo.id
         }
     });
   };
@@ -42,7 +45,7 @@ class App extends Component {
         user:{
           generalInfo: this.state.generalInfo
         },
-        generalInfo: {fullName:'', email: '', phone: ''}, 
+        generalInfo: {fullName:'', email: '', phone: '', id: uniqid()}, 
     });
 
   };

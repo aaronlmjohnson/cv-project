@@ -4,15 +4,15 @@ import React, {Component} from "react";
 class UserInfo extends Component {
   
   render(){
+    const {generalInfo} = this.props;
     return(
-      <div>
+      <ul key={generalInfo.id} id="general-info">
         {
-         Object.keys(this.props.generalInfo).map(key=>{
-
-          return (<p>{this.props.generalInfo[key]}</p>);
+         Object.keys(generalInfo).filter((key)=> key !== "id").map(key=>{
+            return (<li>{generalInfo[key]}</li>);
          })
         }
-      </div>
+      </ul>
     )
   }
 };
