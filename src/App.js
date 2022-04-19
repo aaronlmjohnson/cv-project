@@ -24,13 +24,17 @@ class App extends Component {
   handleChange = (e) => {
     this.setState({
         generalInfo:{
-          fullName:e.target.id === 'full-name' ? e.target.value : this.state.generalInfo.fullName,
-          email: e.target.id === 'email' ? e.target.value : this.state.generalInfo.email,
-          phone: e.target.id === 'phone' ? e.target.value : this.state.generalInfo.phone,
+          fullName:this.setActiveField(e, 'full-name'),
+          email: this.setActiveField(e, 'email'),
+          phone: this.setActiveField(e, 'phone'),
           id:this.state.generalInfo.id
         }
     });
   };
+
+  setActiveField = (e, fieldId)=>{
+    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[fieldId.dashToCamelCase()];
+  }
 
   onSubmitTask = (e) => {
     e.preventDefault();
