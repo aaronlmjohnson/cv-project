@@ -1,20 +1,18 @@
 const StringHelper = (()=>{
-  const dashToCamelCase = ()=>{
-    
+  const dashToCamelCase = (str)=>{
+    if(!str.includes('-')) return str;
+   
+    return str.split('-').map((word, i)=> i > 0 ? capitalize(word) : word).join('');
+  }
+
+  const capitalize = (str)=>{
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  return{
+    dashToCamelCase,
+    capitalize,
   }
 })();
 
-String.prototype.dashToCamelCase = function(){
-    const that = this.toString();
-
-    if(!that.toString().includes('-')) return that;
-   
-    return that.split('-').map((word, i)=> i > 0 ? word.capitalize() : word).join('');
-}
-
-Object.defineProperty(String.prototype, 'capitalize', {
-    value: function() {
-      return this.charAt(0).toUpperCase() + this.slice(1);
-    },
-    enumerable: false
-});
+export default StringHelper;

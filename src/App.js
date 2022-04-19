@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
 import uniqid from "uniqid";
-import String from "./StringHelper";
+import StringHelper from "./StringHelper";
 
 class App extends Component {
   constructor() {
@@ -34,7 +34,9 @@ class App extends Component {
   };
 
   setActiveField = (e, fieldId)=>{
-    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[fieldId.dashToCamelCase()].text;
+    const formattedFieldId = StringHelper.dashToCamelCase(fieldId);
+    console.log(formattedFieldId);
+    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[formattedFieldId].text;
   }
 
   onSubmitTask = (e) => {
