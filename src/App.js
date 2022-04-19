@@ -13,15 +13,13 @@ class App extends Component {
     this.state = {
       user:{
         generalInfo:{
-          firstName:'',
-          lastName:'',
+          fullName: '',
           email:'',
           phone:''
         },
       },
       generalInfo:{
-        firstName:'',
-        lastName:'',
+        fullName: '',
         email:'',
         phone:''
       }   
@@ -31,8 +29,7 @@ class App extends Component {
   handleChange = (e) => {
     this.setState({
         generalInfo:{
-          firstName:e.target.id === 'first-name' ? e.target.value : this.state.generalInfo.firstName,
-          lastName: e.target.id === 'last-name' ? e.target.value : this.state.generalInfo.lastName,
+          fullName:e.target.id === 'full-name' ? e.target.value : this.state.generalInfo.fullName,
           email: e.target.id === 'email' ? e.target.value : this.state.generalInfo.email,
           phone: e.target.id === 'phone' ? e.target.value : this.state.generalInfo.phone,
         }
@@ -45,7 +42,7 @@ class App extends Component {
         user:{
           generalInfo: this.state.generalInfo
         },
-        generalInfo: {firstName: '', lastName: '', email: '', phone: ''}, 
+        generalInfo: {fullName:'', email: '', phone: ''}, 
     });
 
   };
