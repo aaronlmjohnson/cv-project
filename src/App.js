@@ -53,13 +53,11 @@ class App extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
+
     this.setState({
         user:{
           generalInfo: {
-            fullName: this.state.generalInfo.fullName,
-            email: this.state.generalInfo.email,
-            phone: this.state.generalInfo.phone,
-            id: this.state.generalInfo.id,
+            ...this.state.generalInfo,
             isSubmitted: true
           }
         },
