@@ -16,7 +16,8 @@ class App extends Component {
         fullName: {text:'', id: uniqid()},
         email:{text:'', id: uniqid()},
         phone:{text:'', id: uniqid()},
-        id:uniqid()
+        id:uniqid(),
+        isSubmitted: false
       }   
   };
 }
@@ -28,14 +29,14 @@ class App extends Component {
           fullName:{text: this.setActiveField(e, 'full-name'), id: generalInfo.fullName.id},
           email: {text: this.setActiveField(e, 'email'), id: generalInfo.email.id},
           phone: {text: this.setActiveField(e, 'phone'), id: generalInfo.phone.id},
-          id:generalInfo.id
+          id:generalInfo.id,
+          isSubmitted: false
         }
     });
   };
 
   setActiveField = (e, fieldId)=>{
     const formattedFieldId = StringHelper.dashToCamelCase(fieldId);
-    console.log(formattedFieldId);
     return e.target.id === fieldId ? e.target.value : this.state.generalInfo[formattedFieldId].text;
   }
 
@@ -43,13 +44,20 @@ class App extends Component {
     e.preventDefault();
     this.setState({
         user:{
-          generalInfo: this.state.generalInfo
+          generalInfo: {
+            fullName: this.state.generalInfo.fullName,
+            email: this.state.generalInfo.email,
+            phone: this.state.generalInfo.phone,
+            id: this.state.generalInfo.id,
+            isSubmitted: true
+          }
         },
         generalInfo: {
           fullName:{text:'', id: uniqid()},
           email: {text:'', id: uniqid()},
           phone: {text:'', id: uniqid()},
-          id: uniqid()
+          id: uniqid(),
+          isSubmitted: false
         }, 
     });
   };
