@@ -23,17 +23,28 @@ class App extends Component {
 }
 
   handleChange = (e) => {
-    const generalInfo = this.state.generalInfo;
-    this.setState({
-        generalInfo:{
-          fullName:{text: this.setActiveField(e, 'full-name'), id: generalInfo.fullName.id},
-          email: {text: this.setActiveField(e, 'email'), id: generalInfo.email.id},
-          phone: {text: this.setActiveField(e, 'phone'), id: generalInfo.phone.id},
-          id:generalInfo.id,
-          isSubmitted: false
+    this.setState(prevState => ({
+      generalInfo: {
+        ...prevState.generalInfo, 
+        fullName: {    
+          ...prevState.generalInfo.fullName,
+          text: this.setActiveField(e, 'full-name')
+        },
+        email:{
+          ...prevState.generalInfo.email,
+          text: this.setActiveField(e, 'email')
+        },
+        phone:{
+          ...prevState.generalInfo.phone,
+          text: this.setActiveField(e, 'phone')
         }
-    });
+      }
+    }));
   };
+
+  handleEdit = (e)=>{
+
+  }
 
   setActiveField = (e, fieldId)=>{
     const formattedFieldId = StringHelper.dashToCamelCase(fieldId);
@@ -72,7 +83,10 @@ class App extends Component {
           onSubmitTask={this.onSubmitTask.bind(this)}
         />
 
-        <CV user ={this.state.user}/>
+        <CV 
+          user ={this.state.user}
+          handleEdit = {this.handleEdit.bind(this)}
+        />
       </div>
     );
   }

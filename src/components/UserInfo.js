@@ -2,8 +2,8 @@ import React from "react";
 
 const UserInfo = (props)=> {
   
-  const {generalInfo} = props;
-  console.log(generalInfo);
+  const {generalInfo, handleEdit} = props;
+  
   return(
     <div id="general-info-container">
       <h1>General Information</h1>
@@ -14,7 +14,7 @@ const UserInfo = (props)=> {
           })
         }
       </ul>
-      <button>Edit</button>
+      <button id="edit-general-info" onClick={handleEdit}>Edit</button>
     </div>
     
   )

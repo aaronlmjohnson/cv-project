@@ -5,7 +5,7 @@ const CV = (props)=>{
     const { generalInfo } = props.user;
 
     const isGeneralInfoSubmitted = ()=>{
-        if(generalInfo.isSubmitted) return <UserInfo generalInfo = {generalInfo}/>;
+        if(generalInfo.isSubmitted) return <UserInfo generalInfo = {generalInfo} handleEdit = {props.handleEdit}/>;
         return (<div></div>)
         
     }
