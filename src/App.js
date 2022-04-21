@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralForm from "./components/GeneralForm";
 import uniqid from "uniqid";
-import StringHelper from "./StringHelper";
 
 class App extends Component {
   constructor() {
@@ -24,7 +23,6 @@ class App extends Component {
 }
 
   handleChange = (e) => {
-    console.log(e.target.name)
     this.setState(prevState => ({
       generalInfo: {
         ...prevState.generalInfo,
@@ -49,7 +47,7 @@ class App extends Component {
       }
     }));
   }
-  
+
   onSubmitTask = (e) => {
     e.preventDefault();
 
