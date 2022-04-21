@@ -7,14 +7,31 @@ const UserInfo = (props)=> {
   const editView = ()=>{
     return (
     <form id="edit-general-info" onSubmit={props.onSubmit} >
-      <label htmlFor="full-name"></label>
+      <label htmlFor="full-name-edit"></label>
       <input 
         onChange={handleChange}
         value={generalInfo.fullName.text}
         type="text"
-        id="full-name"
+        id="full-name-edit"
         name="fullName"
       />
+      <label htmlFor="email-edit"></label>
+      <input 
+        onChange={handleChange}
+        value={generalInfo.email.text}
+        type="text"
+        id="email-edit"
+        name="email"
+      />
+      <label htmlFor="phone-edit"></label>
+      <input 
+        onChange={handleChange}
+        value={generalInfo.phone.text}
+        type="text"
+        id="phone-edit"
+        name="phone"
+      />
+      
       <button type="submit">Submit</button>
     </form>
     )
