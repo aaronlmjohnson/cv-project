@@ -68,21 +68,33 @@ class App extends Component {
     });
   };
 
-  render() {
-    return (
-      <div id="content">
+  displayView = ()=>{
+    const {generalInfo} = this.state.user
+
+    if(!generalInfo.isSubmitted){
+      return (
         <GeneralForm 
           generalInfo = {this.state.generalInfo}
           user = {this.state}
           handleChange={this.handleChange.bind(this)}
           onSubmitTask={this.onSubmitTask.bind(this)}
         />
+      )
+    }
 
-        <CV 
+    return (
+      <CV 
           user ={this.state.user}
           handleEdit = {this.handleEdit.bind(this)}
           handleChange = {this.handleChange.bind(this)}
         />
+    )
+  }
+
+  render() {
+    return (
+      <div id="content">
+        {this.displayView()}
       </div>
     );
   }
