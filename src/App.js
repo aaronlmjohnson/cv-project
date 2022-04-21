@@ -48,14 +48,15 @@ class App extends Component {
     }));
   }
 
-  onSubmitTask = (e) => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     this.setState({
         user:{
           generalInfo: {
             ...this.state.generalInfo,
-            isSubmitted: true
+            isSubmitted: true,
+            isBeingEdited: false
           }
         },
         generalInfo: {
@@ -63,7 +64,8 @@ class App extends Component {
           email: {text:'', id: uniqid()},
           phone: {text:'', id: uniqid()},
           id: uniqid(),
-          isSubmitted: false
+          isSubmitted: false,
+          isBeingEdited: false
         }, 
     });
   };
@@ -77,7 +79,7 @@ class App extends Component {
           generalInfo = {this.state.generalInfo}
           user = {this.state}
           handleChange={this.handleChange.bind(this)}
-          onSubmitTask={this.onSubmitTask.bind(this)}
+          onSubmit={this.onSubmit.bind(this)}
         />
       )
     }
@@ -85,8 +87,10 @@ class App extends Component {
     return (
       <CV 
           user ={this.state.user}
+          generalInfo={this.state.generalInfo}
           handleEdit = {this.handleEdit.bind(this)}
           handleChange = {this.handleChange.bind(this)}
+          onSubmit = {this.onSubmit.bind(this)}
         />
     )
   }
