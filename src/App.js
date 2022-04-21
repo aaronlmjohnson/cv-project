@@ -17,40 +17,39 @@ class App extends Component {
         email:{text:'', id: uniqid()},
         phone:{text:'', id: uniqid()},
         id:uniqid(),
-        isSubmitted: false
+        isSubmitted: false,
+        isBeingEdited: false
       }   
   };
 }
 
   handleChange = (e) => {
+    console.log(e.target.name)
     this.setState(prevState => ({
       generalInfo: {
-        ...prevState.generalInfo, 
-        fullName: {    
-          ...prevState.generalInfo.fullName,
-          text: this.setActiveField(e, 'full-name')
-        },
-        email:{
-          ...prevState.generalInfo.email,
-          text: this.setActiveField(e, 'email')
-        },
-        phone:{
-          ...prevState.generalInfo.phone,
-          text: this.setActiveField(e, 'phone')
-        }
+        ...prevState.generalInfo,
+        [e.target.name]:{
+          ...prevState.generalInfo[e.target.name],
+          text: e.target.value
+        } 
       }
     }));
   };
 
   handleEdit = (e)=>{
-
+    this.setState(prevState =>({
+      user:{
+        generalInfo:{
+          ...prevState.user.generalInfo,
+          isBeingEdited: true
+        }
+      },
+      generalInfo:{
+        ...prevState.user.generalInfo
+      }
+    }));
   }
-
-  setActiveField = (e, fieldId)=>{
-    const formattedFieldId = StringHelper.dashToCamelCase(fieldId);
-    return e.target.id === fieldId ? e.target.value : this.state.generalInfo[formattedFieldId].text;
-  }
-
+  
   onSubmitTask = (e) => {
     e.preventDefault();
 
@@ -84,6 +83,7 @@ class App extends Component {
         <CV 
           user ={this.state.user}
           handleEdit = {this.handleEdit.bind(this)}
+          handleChange = {this.handleChange.bind(this)}
         />
       </div>
     );
