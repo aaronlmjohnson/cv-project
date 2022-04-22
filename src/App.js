@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CV from "./components/CV";
 import GeneralInfoForm from "./components/GeneralInfoForm";
 import uniqid from "uniqid";
+import SectionSidebar from "./components/SectionSidebar";
 
 class App extends Component {
   constructor() {
@@ -98,6 +99,7 @@ class App extends Component {
   render() {
     return (
       <div id="content">
+        <SectionSidebar />
         {this.displayView()}
       </div>
     );
