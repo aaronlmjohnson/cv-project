@@ -3,6 +3,7 @@ import CV from "./components/CV";
 import GeneralInfoForm from "./components/GeneralInfoForm";
 import uniqid from "uniqid";
 import SectionSidebar from "./components/SectionSidebar";
+import "./App.css";
 
 class App extends Component {
   constructor() {
