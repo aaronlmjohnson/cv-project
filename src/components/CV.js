@@ -1,5 +1,5 @@
 import React from "react";
-import GeneralInfo from "./generalInfo";
+import GeneralInfo from "./GeneralInfo";
 
 const CV = (props)=>{
     const { user, generalInfo } = props;

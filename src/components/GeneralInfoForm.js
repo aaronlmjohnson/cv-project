@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const GeneralForm = (props)=>{
+const GeneralInfoForm = (props)=>{
     const generalInput = (value, type, id, name, labelValue)=>{
         return(
             <div className="general-form-input">
@@ -33,4 +33,4 @@ const GeneralForm = (props)=>{
 }
 
 
-export default GeneralForm;
+export default GeneralInfoForm;

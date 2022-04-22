@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CV from "./components/CV";
-import GeneralForm from "./components/GeneralForm";
+import GeneralInfoForm from "./components/GeneralInfoForm";
 import uniqid from "uniqid";
 
 class App extends Component {
@@ -75,7 +75,7 @@ class App extends Component {
 
     if(!generalInfo.isSubmitted){
       return (
-        <GeneralForm 
+        <GeneralInfoForm 
           generalInfo = {this.state.generalInfo}
           user = {this.state}
           handleChange={this.handleChange.bind(this)}
