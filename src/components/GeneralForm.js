@@ -16,14 +16,19 @@ const GeneralForm = (props)=>{
             </div>
         ) 
     }
+
     const { fullName, email, phone } = props;
     return (
-        <form id="general-info-form" onSubmit={props.onSubmit}>
-            {generalInput(fullName , "text", "full-name", "fullName", "Full Name")} 
-            {generalInput(email, "email", "email", "email", "E-mail")}
-            {generalInput(phone, "phone", "phone", "phone", "Phone Number")}
-            <button type="submit">Submit</button>
-        </form>
+        <div id="general-info-form-section">
+            <h1>General Information</h1>
+            <form id="general-info-form" onSubmit={props.onSubmit}>
+                {generalInput(fullName , "text", "full-name", "fullName", "Full Name")} 
+                {generalInput(email, "email", "email", "email", "E-mail")}
+                {generalInput(phone, "phone", "phone", "phone", "Phone Number")}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
     )
 }
 

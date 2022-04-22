@@ -51,11 +51,17 @@ const UserInfo = (props)=> {
       </ul>
     )
   }
+
+  const editButton = ()=>{
+    if(!user.generalInfo.isBeingEdited)
+      return (<button id="edit-general-info" onClick={handleEdit}>Edit</button>)
+  }
   return(
     <div id="general-info-container">
       <h1>General Information</h1>
         {displayView()}
-      <button id="edit-general-info" onClick={handleEdit}>Edit</button>
+        {editButton()}
+      
     </div>
     
   )
