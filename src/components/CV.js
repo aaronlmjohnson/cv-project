@@ -1,12 +1,12 @@
 import React from "react";
-import UserInfo from "./UserInfo";
+import GeneralInfo from "./generalInfo";
 
 const CV = (props)=>{
     const { user, generalInfo } = props;
 
     const isGeneralInfoSubmitted = ()=>{
         if(user.generalInfo.isSubmitted){
-            return <UserInfo 
+            return <GeneralInfo 
                     user= {user} 
                     generalInfo = {generalInfo}
                     handleEdit = {props.handleEdit} 

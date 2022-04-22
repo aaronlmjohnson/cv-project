@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserInfo = (props)=> {
+const GeneralInfo = (props)=> {
   
   const {user, handleEdit, handleChange, generalInfo} = props;
 
@@ -68,4 +68,4 @@ const UserInfo = (props)=> {
 }
 
 
-export default UserInfo;
+export default GeneralInfo;
