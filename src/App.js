@@ -58,7 +58,8 @@ class App extends Component {
           generalInfo: {
             ...this.state.generalInfo,
             isSubmitted: true,
-            isBeingEdited: false
+            isBeingEdited: false,
+            activeSection: true
           }
         },
         generalInfo: {
@@ -71,6 +72,22 @@ class App extends Component {
         }, 
     });
   };
+
+  changeSection = (e)=>{
+    if(e.target.id === "general-info-button"){
+      this.setState({
+        user:{
+          generalInfo:{...this.state.user.generalInfo, activeSection: true}
+        }
+      })
+    }else{
+      this.setState({
+        user:{
+          generalInfo:{...this.state.user.generalInfo, activeSection: false}
+        }
+      })
+    }
+  }
 
   displayView = ()=>{
     const {generalInfo} = this.state.user
@@ -100,7 +117,7 @@ class App extends Component {
   render() {
     return (
       <div id="content">
-        <SectionSidebar />
+        <SectionSidebar changeSection={this.changeSection.bind(this)}/>
         {this.displayView()}
       </div>
     );

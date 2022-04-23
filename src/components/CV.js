@@ -5,7 +5,7 @@ const CV = (props)=>{
     const { user, generalInfo } = props;
 
     const isGeneralInfoSubmitted = ()=>{
-        if(user.generalInfo.isSubmitted){
+        if(user.generalInfo.isSubmitted && user.generalInfo.activeSection){
             return <GeneralInfo 
                     user= {user} 
                     generalInfo = {generalInfo}
@@ -15,8 +15,8 @@ const CV = (props)=>{
                   />;
         } 
         return (<div></div>)
-        
     }
+
     return (
         <div id="cv">
             {isGeneralInfoSubmitted()}
