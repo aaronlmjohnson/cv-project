@@ -12,6 +12,8 @@ class App extends Component {
     this.state = {
       user:{
         generalInfo:{},
+        educationInfo:{},
+        practicalInfo:{}
       },
       generalInfo:{
         fullName: {text:'', id: uniqid()},
@@ -74,12 +76,17 @@ class App extends Component {
   };
 
   changeSection = (e)=>{
-    if(e.target.id === "general-info-button"){
+    const [general, education, practical] = ["general-info-button", "educational-experience-button", "practical-experience-button"];
+    if(e.target.id === general){
       this.setState({
         user:{
           generalInfo:{...this.state.user.generalInfo, activeSection: true}
         }
       })
+    } else if(e.target.id === education){
+      console.log("education");
+    } else if(e.target.id === practical){
+      console.log("practical");
     }else{
       this.setState({
         user:{
