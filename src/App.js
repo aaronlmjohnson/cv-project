@@ -4,6 +4,7 @@ import GeneralInfoForm from "./components/GeneralInfoForm";
 import uniqid from "uniqid";
 import SectionSidebar from "./components/SectionSidebar";
 import "./App.css";
+import EducationInfoForm from "./components/EducationInfoForm";
 
 class App extends Component {
   constructor() {
@@ -21,8 +22,18 @@ class App extends Component {
         phone:{text:'', id: uniqid()},
         id:uniqid(),
         isSubmitted: false,
-        isBeingEdited: false
-      }   
+        isBeingEdited: false,
+        activeSection: true
+      },
+      educationInfo: {
+        school: {text:'', id: uniqid()},
+        major: {text:'', id:uniqid()},
+        startDate:{text:'', id:uniqid()},
+        endDate:{text:'', id:uniqid()},
+        isSubmitted: false,
+        isBeingEdited: false,
+        activeSEction: false
+      }  
   };
 }
 
@@ -34,6 +45,13 @@ class App extends Component {
           ...prevState.generalInfo[e.target.name],
           text: e.target.value
         } 
+      },
+      educationInfo: {
+        ...prevState.educationInfo,
+        [e.target.name]:{
+          ...prevState.educationInfo[e.target.name],
+          text: e.target.value
+        }
       }
     }));
   };
@@ -77,29 +95,35 @@ class App extends Component {
 
   changeSection = (e)=>{
     const [general, education, practical] = ["general-info-button", "educational-experience-button", "practical-experience-button"];
+    
     if(e.target.id === general){
       this.setState({
         user:{
           generalInfo:{...this.state.user.generalInfo, activeSection: true}
-        }
+        },
+        generalInfo:{...this.state.generalInfo, activeSection: true}
       })
     } else if(e.target.id === education){
-      console.log("education");
-    } else if(e.target.id === practical){
-      console.log("practical");
-    }else{
       this.setState({
         user:{
           generalInfo:{...this.state.user.generalInfo, activeSection: false}
-        }
+        },
+        generalInfo:{...this.state.generalInfo, activeSection: false}
+      })
+    } else{
+      this.setState({
+        user:{
+          generalInfo:{...this.state.user.generalInfo, activeSection: false}
+        },
+        generalInfo:{...this.state.generalInfo, activeSection: false}
       })
     }
   }
 
   displayView = ()=>{
-    const {generalInfo} = this.state.user
+    const {generalInfo, educationInfo} = this.state
 
-    if(!generalInfo.isSubmitted){
+    if(!this.state.user.generalInfo.isSubmitted && generalInfo.activeSection){
       return (
         <GeneralInfoForm 
           generalInfo = {this.state.generalInfo}
@@ -108,6 +132,8 @@ class App extends Component {
           onSubmit={this.onSubmit.bind(this)}
         />
       )
+    }else if(!this.user.educationInfo.isSubmitted && educationInfo.activeSection){
+      console.log("edu")
     }
 
     return (
