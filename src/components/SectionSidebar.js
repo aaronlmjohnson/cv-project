@@ -1,5 +1,6 @@
 import React from "react";
 import SectionButton from "./SectionButton";
+import "./SectionSidebar.css"
 
 const SectionSidebar = ()=>{
     return(

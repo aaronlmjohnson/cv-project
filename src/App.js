@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CvForm from "./components/CvForm";
+import CvContainer from "./components/CvContainer";
+import "./App.css"
 
 class App extends Component {
   constructor() {
@@ -14,9 +15,7 @@ class App extends Component {
   render() {
     
     return (
-      <div id="content">
-        <CvForm />
-      </div>
+        <CvContainer />
     );
   }
 }
