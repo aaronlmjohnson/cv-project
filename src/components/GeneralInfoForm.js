@@ -1,12 +1,18 @@
 import React from "react";
 import FormHeader from "./FormHeader";
+import TextItem from "./TextItem";
 
-const GeneralInfo = ()=>{
+const GeneralInfoForm = ()=>{
     return(
-        <form id= "general-info">
-            <FormHeader id="general-info-header" header="General Information"/>
-        </form>
+        <div id="general-info-form-container">
+            <FormHeader id="general-info-header" value="General Information"/>
+            <form id= "general-info-form">
+                <ul id="general-info-form-items">
+                    <TextItem id={"full-name"} name={"fullName"} value={"Full Name:"}/>
+                </ul>    
+            </form>
+        </div> 
     )
 }
 
-export default GeneralInfo;
+export default GeneralInfoForm;
