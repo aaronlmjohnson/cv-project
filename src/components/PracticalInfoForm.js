@@ -1,6 +1,7 @@
 import React from "react";
 import DateItem from "../DateItem";
 import FormHeader from "./FormHeader";
+import TextArea from "./TextArea";
 import TextItem from "./TextItem";
 
 const PracticalInfoForm = ()=>{
@@ -13,10 +14,7 @@ const PracticalInfoForm = ()=>{
                 <TextItem id={"position-title"} name={"positionTitle"} value={"Position Title:"}/>
                 <DateItem id={"work-start-date"} name={"workStartDate"} value={"Start Date:"} />
                 <DateItem id={"work-end-date"} name={"workEndDate"} value={"End Date:"} />
-                    {/* <TextItem id={"school"} name={"school"} value={"School:"}/>
-                    <TextItem id={"degree"} name={"degree"} value={"Degree:"}/>
-                    <DateItem id={"start-date"} name={"startDate"} value={"Start Date:"} />
-                    <DateItem id={"end-date"} name={"endDate"} value={"End Date:"} /> */}
+                <TextArea id={"job-tasks"} name={"jobTasks"} value={"Job Tasks:"}/>
                 </ul>    
             </form>
         </div> 
