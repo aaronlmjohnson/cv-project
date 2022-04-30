@@ -1,6 +1,7 @@
 import React from "react";
 import EducationInfoForm from "./EducationInfoForm";
 import GeneralInfoForm from "./GeneralInfoForm";
+import PracticalInfoForm from "./PracticalInfoForm";
 
 const ActiveForm = ()=>{
     return(
@@ -8,6 +9,8 @@ const ActiveForm = ()=>{
             <GeneralInfoForm />
             <br/>
             <EducationInfoForm />
+            <br/>
+            <PracticalInfoForm />
         </div>
     )
 }

@@ -11,8 +11,8 @@ const EducationInfoForm = ()=>{
                 <ul id="educational-experience-form-items">
                     <TextItem id={"school"} name={"school"} value={"School:"}/>
                     <TextItem id={"degree"} name={"degree"} value={"Degree:"}/>
-                    <DateItem id={"start-date"} name={"startDate"} value={"Start Date:"} />
-                    <DateItem id={"end-date"} name={"endDate"} value={"End Date:"} />
+                    <DateItem id={"school-start-date"} name={"schoolStartDate"} value={"Start Date:"} />
+                    <DateItem id={"school-end-date"} name={"schoolEndDate"} value={"End Date:"} />
                 </ul>    
             </form>
         </div> 
