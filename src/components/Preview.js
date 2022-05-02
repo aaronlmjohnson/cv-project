@@ -1,6 +1,7 @@
 import React from "react";
 import FormHeader from "./FormHeader";
-import "./Preview.css"
+import "./Preview.css";
+import uniqid from "uniqid";
 const Preview = (props)=>{
 
     const {generalInfo, educationExperience, practicalExperience } = props.preview;
@@ -27,6 +28,7 @@ const Preview = (props)=>{
                 <FormHeader id={"education-experience-header"} value="Education Experience" />
                 {displayEducationExperience()}
             </ul>
+            
         </div>
     )
 }
