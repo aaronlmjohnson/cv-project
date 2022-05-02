@@ -1,14 +1,14 @@
 import React from "react";
 import FormHeader from "./FormHeader";
 import "./Preview.css";
-import uniqid from "uniqid";
+
 const Preview = (props)=>{
 
     const {generalInfo, educationExperience, practicalExperience } = props.preview;
     const displayEducationExperience = ()=>{
         return educationExperience.map((entry)=>{
             return(
-                <li className="education-entry">
+                <li className="education-entry" key={entry.id}>
                     <p id="school"><span id="degree">{entry.degree}</span>, {entry.school}</p>
                     <p id="date-range">From: {entry.startDate} to {entry.endDate}</p>
                     <br/>
