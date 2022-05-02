@@ -5,11 +5,12 @@ import "./CvContainer.css"
 import Preview from "./Preview";
 
 const CvForm = ()=>{
+    const data = {fullName:"Aaron Johnson", email:"aaron@gmail.com", phone: "123-456-7890"}
     return(
         <div id= "cv-container">
             <SectionSidebar />
             <ActiveForm />
-            <Preview />
+            <Preview preview={data}/>
         </div>
     )
 }
