@@ -1,21 +1,11 @@
 import React from "react";
+import EducationEntries from "./EducationEntries";
 import FormHeader from "./FormHeader";
 import "./Preview.css";
 
 const Preview = (props)=>{
 
     const {generalInfo, educationExperience, practicalExperience } = props.preview;
-    const displayEducationExperience = ()=>{
-        return educationExperience.map((entry)=>{
-            return(
-                <li className="education-entry" key={entry.id}>
-                    <p id="school"><span id="degree">{entry.degree}</span>, {entry.school}</p>
-                    <p id="education-date-range">From: {entry.startDate} to {entry.endDate}</p>
-                    <br/>
-                </li>
-            ) 
-        })
-    }
 
     const displayPracticalExperience = ()=>{
         return practicalExperience.map((entry)=>{
@@ -38,12 +28,11 @@ const Preview = (props)=>{
             </ul>
             <ul id="education-section">
                 <FormHeader id={"education-experience-header"} value="Education Experience" />
-                {displayEducationExperience()}
+                <EducationEntries educationExperience = { educationExperience} />
             </ul>
             <ul id="practical-section">
                 <FormHeader id={"practical-experience-header"} value="Practical Experience" />
                 {displayPracticalExperience()}
-
             </ul>
         </div>
     )
