@@ -1,6 +1,6 @@
 import React from "react";
 import ContactSection from "./ContactSection";
-import EducationEntries from "./EducationEntries";
+import EducationSection from "./EducationSection";
 import FormHeader from "./FormHeader";
 import PracticalEntries from "./PracticalEntries";
 import "./Preview.css";
@@ -13,10 +13,7 @@ const Preview = (props)=>{
         <div id="preview">
             <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
             <ContactSection generalInfo = { generalInfo }/>
-            <ul id="education-section">
-                <FormHeader id={"education-experience-header"} value="Education Experience" />
-                <EducationEntries educationExperience = { educationExperience} />
-            </ul>
+            <EducationSection educationExperience = { educationExperience }/>
             <ul id="practical-section">
                 <FormHeader id={"practical-experience-header"} value="Practical Experience" />
                 <PracticalEntries practicalExperience = { practicalExperience } />
