@@ -8,6 +8,8 @@ const EducationEntries = (props)=>{
             <li className="education-entry" key={entry.id}>
                 <p id="school"><span id="degree">{entry.degree}</span>, {entry.school}</p>
                 <p id="education-date-range">From: {entry.startDate} to {entry.endDate}</p>
+                <button className="edit-entry">Edit</button>
+                <button className="delete-entry">Delete</button>
                 <br/>
             </li>
         ) 

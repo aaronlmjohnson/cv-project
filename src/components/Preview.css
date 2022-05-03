@@ -24,6 +24,10 @@
     margin-bottom: 20px;
 }
 
+#preview h2 {
+    font-size: 20px;
+}
+
 #full-name-preview {
     margin: 50px 0;
 }
