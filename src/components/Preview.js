@@ -10,7 +10,19 @@ const Preview = (props)=>{
             return(
                 <li className="education-entry" key={entry.id}>
                     <p id="school"><span id="degree">{entry.degree}</span>, {entry.school}</p>
-                    <p id="date-range">From: {entry.startDate} to {entry.endDate}</p>
+                    <p id="education-date-range">From: {entry.startDate} to {entry.endDate}</p>
+                    <br/>
+                </li>
+            ) 
+        })
+    }
+
+    const displayPracticalExperience = ()=>{
+        return practicalExperience.map((entry)=>{
+            return(
+                <li className="practical-entry" key={entry.id}>
+                    <p id="company"><span id="position">{entry.position}</span> at {entry.company}</p>
+                    <p id="practical-date-range">From: {entry.startDate} to {entry.endDate}</p>
                     <br/>
                 </li>
             ) 
@@ -28,7 +40,11 @@ const Preview = (props)=>{
                 <FormHeader id={"education-experience-header"} value="Education Experience" />
                 {displayEducationExperience()}
             </ul>
-            
+            <ul id="practical-section">
+                <FormHeader id={"practical-experience-header"} value="Practical Experience" />
+                {displayPracticalExperience()}
+
+            </ul>
         </div>
     )
 }
