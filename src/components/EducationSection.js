@@ -6,7 +6,7 @@ const EducationSection = (props)=>{
     const { educationExperience } = props;
     return( 
         <div id="education-section">
-            <ul id="education-section">
+            <ul id="education-entries">
                 <FormHeader id={"education-experience-header"} value="Education Experience" />
                 <EducationEntries educationExperience = { educationExperience} />
             </ul>
