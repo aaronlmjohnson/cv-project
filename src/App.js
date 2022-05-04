@@ -13,9 +13,9 @@ class App extends Component {
 
 
   render() {
-    
+    const {activeForm} = this.state
     return (
-        <CvContainer />
+        <CvContainer activeForm={activeForm}/>
     );
   }
 }

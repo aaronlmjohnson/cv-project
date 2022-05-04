@@ -4,13 +4,17 @@ import GeneralInfoForm from "./GeneralInfoForm";
 import PracticalInfoForm from "./PracticalInfoForm";
 import Preview from "./Preview";
 
-const ActiveForm = ()=>{
+const ActiveForm = (props)=>{
+    const { activeForm } = props;
+    const displayActiveForm = ()=>{
+        if(activeForm === "general") return <GeneralInfoForm />
+        if(activeForm === "education") return <EducationInfoForm />
+        if(activeForm === "practical") return <PracticalInfoForm />
+        return <Preview />
+    }
     return(
         <div id= "active-form">
-            <GeneralInfoForm />
-            {/* <EducationInfoForm />
-            <PracticalInfoForm />
-            <Preview preview={data}/> */}
+            {displayActiveForm()}
         </div>
     )
 }
