@@ -5,8 +5,12 @@ import "./App.css"
 class App extends Component {
   constructor() {
     super();
-    this.CV_DATA = {
-      
+    this.state = {
+        generalInfo:{
+          fullName:"Aaron Johnson",
+          email:"aaron@gmail.com",
+          phone:"012-345-6789"
+      },
     }
   };
 

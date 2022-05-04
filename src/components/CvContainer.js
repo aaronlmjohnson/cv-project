@@ -6,7 +6,7 @@ import Preview from "./Preview";
 const data = require("../cvData.json");
 
 const CvForm = ()=>{
-
+     
     return(
         <div id= "cv-container">
             <SectionSidebar />

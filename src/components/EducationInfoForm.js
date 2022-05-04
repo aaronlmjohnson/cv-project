@@ -1,5 +1,5 @@
 import React from "react";
-import DateItem from "../DateItem";
+import DateItem from "./DateItem";
 import FormHeader from "./FormHeader";
 import TextItem from "./TextItem";
 
