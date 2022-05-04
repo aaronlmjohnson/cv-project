@@ -5,13 +5,12 @@ import "./CvContainer.css"
 import Preview from "./Preview";
 const data = require("../cvData.json");
 
-const CvForm = ()=>{
-     
+const CvForm = (props)=>{
+
     return(
         <div id= "cv-container">
             <SectionSidebar />
             <ActiveForm />
-            <Preview preview={data}/>
         </div>
     )
 }
