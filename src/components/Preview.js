@@ -6,15 +6,15 @@ import PracticalSection from "./PracticalSection";
 import "./Preview.css";
 
 const Preview = (props)=>{
-    
-    const {generalInfo, educationExperience, practicalExperience } = props.preview;
+    //const {generalInfo, educationExperience, practicalExperience } = props.preview;
 
     return(
         <div id="preview">
-            <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
+            Preview Placeholder
+            {/* <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
             <ContactSection generalInfo = { generalInfo }/>
             <EducationSection educationExperience = { educationExperience }/>
-            <PracticalSection practicalExperience = { practicalExperience } />
+            <PracticalSection practicalExperience = { practicalExperience } /> */}
         </div>
     )
 }

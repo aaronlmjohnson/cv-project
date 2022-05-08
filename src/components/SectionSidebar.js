@@ -2,13 +2,13 @@ import React from "react";
 import SectionButton from "./SectionButton";
 import "./SectionSidebar.css"
 
-const SectionSidebar = ()=>{
+const SectionSidebar = (props)=>{
     return(
         <div id= "section-sidebar">
-            <SectionButton name={"general"} value={"General Information"}/>
-            <SectionButton name={"education"} value={"Education Experience"}/>
-            <SectionButton name={"practical"} value={"Practical Experience"}/>
-            <SectionButton name={"preview"} value={"Preview"}/>
+            <SectionButton changeForm = {props.changeForm} name={"general"} value={"General Information"}/>
+            <SectionButton changeForm = {props.changeForm} name={"education"} value={"Education Experience"}/>
+            <SectionButton changeForm = {props.changeForm} name={"practical"} value={"Practical Experience"}/>
+            <SectionButton changeForm = {props.changeForm} name={"preview"} value={"Preview"}/>
         </div>
     )
 }

@@ -8,14 +8,23 @@ class App extends Component {
     this.state = {
       activeForm: "general"
     }
+
+    this.changeForm = this.changeForm.bind(this)
   };
 
-
+  changeForm = (e)=>{
+    this.setState({
+      activeForm: e.target.name
+    })
+  }
 
   render() {
     const {activeForm} = this.state
     return (
-        <CvContainer activeForm={activeForm}/>
+        <CvContainer 
+          activeForm={activeForm}
+          changeForm={this.changeForm}
+        />
     );
   }
 }

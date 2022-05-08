@@ -1,6 +1,6 @@
 import React from "react";
 import  uniqid  from "uniqid";
-import FormHeader from "./FormHeader";
+//import FormHeader from "./FormHeader";
 
 const PracticalDuties = (props)=>{
     const { duties } = props;
