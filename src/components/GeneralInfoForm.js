@@ -4,13 +4,13 @@ import FormHeader from "./FormHeader";
 import PhoneItem from "./PhoneItem";
 import TextItem from "./TextItem";
 
-const GeneralInfoForm = ()=>{
+const GeneralInfoForm = (props)=>{
     return(
         <div id="general-info-form-container">
             <FormHeader id="general-info-header" value="General Information"/>
-            <form id="general-info-form">
+            <form id="general-info-form" name={"generalInfo"}>
                 <ul id="general-info-form-items">
-                    <TextItem id={"full-name"} name={"fullName"} value={"Full Name:"}/>
+                    <TextItem id={"full-name"} name={"fullName"} labelValue={"Full Name:"} handleChange={props.handleChange} textValue={props.generalInfo.fullName}/>
                     <EmailItem id={"email"} name={"email"} value={"Email:"}/>
                     <PhoneItem id={"phone"} name={"phone"} value={"Phone Number:"}/>
                 </ul>    

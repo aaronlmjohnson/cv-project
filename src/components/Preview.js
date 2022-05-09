@@ -7,12 +7,12 @@ import "./Preview.css";
 
 const Preview = (props)=>{
     //const {generalInfo, educationExperience, practicalExperience } = props.preview;
-
+    const {fullName} = props.generalInfo;
     return(
+        
         <div id="preview">
-            Preview Placeholder
-            {/* <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
-            <ContactSection generalInfo = { generalInfo }/>
+            <FormHeader id={"full-name-preview"} value={fullName}/>
+            {/* <ContactSection generalInfo = { generalInfo }/>
             <EducationSection educationExperience = { educationExperience }/>
             <PracticalSection practicalExperience = { practicalExperience } /> */}
         </div>
