@@ -12,8 +12,8 @@ const Preview = (props)=>{
         
         <div id="preview">
             <FormHeader id={"full-name-preview"} value={fullName}/>
-            {/* <ContactSection generalInfo = { generalInfo }/>
-            <EducationSection educationExperience = { educationExperience }/>
+            <ContactSection generalInfo = { props.generalInfo }/>
+            {/* <EducationSection educationExperience = { educationExperience }/>
             <PracticalSection practicalExperience = { practicalExperience } /> */}
         </div>
     )

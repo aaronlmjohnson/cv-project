@@ -11,8 +11,12 @@ const GeneralInfoForm = (props)=>{
             <form id="general-info-form" name={"generalInfo"}>
                 <ul id="general-info-form-items">
                     <TextItem id={"full-name"} name={"fullName"} labelValue={"Full Name:"} handleChange={props.handleChange} textValue={props.generalInfo.fullName}/>
-                    <EmailItem id={"email"} name={"email"} value={"Email:"}/>
-                    <PhoneItem id={"phone"} name={"phone"} value={"Phone Number:"}/>
+                    <EmailItem id={"email"} name={"email"} labelValue={"Email:"}
+                               handleChange={props.handleChange} emailValue={props.generalInfo.email}
+                    />
+                    <PhoneItem id={"phone"} name={"phone"} labelValue={"Phone Number:"}
+                               handleChange={props.handleChange} phoneValue={props.generalInfo.phone}
+                    />
                 </ul>    
             </form>
         </div> 

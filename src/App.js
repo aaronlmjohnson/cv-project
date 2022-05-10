@@ -43,7 +43,7 @@ class App extends Component {
           activeForm={activeForm}
           changeForm={this.changeForm}
           handleChange={this.handleChange}
-          generalInfo = {{fullName: this.state.fullName, email: this.state.email}}
+          generalInfo = {{fullName: this.state.fullName, email: this.state.email, phone: this.state.phone}}
         />
     );
   }
