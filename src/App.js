@@ -28,8 +28,6 @@ class App extends Component {
   }
 
   handleChange = (e)=>{
-    const name = e.target.name;
-    
     this.setState(prevState => ({
       ...prevState,
       [e.target.name]: e.target.value
@@ -38,12 +36,13 @@ class App extends Component {
 
   render() {
     const {activeForm} = this.state
+    const generalInfo = {fullName: this.state.fullName, email: this.state.email, phone: this.state.phone}
     return (
         <CvContainer 
           activeForm={activeForm}
           changeForm={this.changeForm}
           handleChange={this.handleChange}
-          generalInfo = {{fullName: this.state.fullName, email: this.state.email, phone: this.state.phone}}
+          generalInfo = {generalInfo}
         />
     );
   }
