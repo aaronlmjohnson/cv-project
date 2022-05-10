@@ -11,7 +11,7 @@ const ActiveForm = (props)=>{
         if(activeForm === "general") return <GeneralInfoForm handleChange={handleChange} generalInfo = {generalInfo}/>
         if(activeForm === "education") return <EducationInfoForm />
         if(activeForm === "practical") return <PracticalInfoForm />
-        return <Preview generalInfo = {generalInfo}/>
+        return <Preview handleChange={handleChange} generalInfo = {generalInfo}/>
     }
     return(
         <div id= "active-form">

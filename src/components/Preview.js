@@ -8,6 +8,7 @@ import "./Preview.css";
 const Preview = (props)=>{
     //const {generalInfo, educationExperience, practicalExperience } = props.preview;
     const {fullName} = props.generalInfo;
+    const {handleChange} = props;
     return(
         
         <div id="preview">
