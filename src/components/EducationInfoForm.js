@@ -9,10 +9,10 @@ const EducationInfoForm = ()=>{
             <FormHeader id="education-info-header" value="Educational Experience:"/>
             <form id="educational-experience-form">
                 <ul id="educational-experience-form-items">
-                    <TextItem id={"school"} name={"school"} value={"School:"}/>
-                    <TextItem id={"degree"} name={"degree"} value={"Degree:"}/>
-                    <DateItem id={"school-start-date"} name={"schoolStartDate"} value={"Start Date:"} />
-                    <DateItem id={"school-end-date"} name={"schoolEndDate"} value={"End Date:"} />
+                    <TextItem id={"school"} name={"school"} labelValue={"School:"}/>
+                    <TextItem id={"degree"} name={"degree"} labelValue={"Degree:"}/>
+                    <DateItem id={"school-start-date"} name={"schoolStartDate"} labelValue={"Start Date:"} />
+                    <DateItem id={"school-end-date"} name={"schoolEndDate"} labelValue={"End Date:"} />
                 </ul>    
             </form>
         </div> 

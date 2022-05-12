@@ -11,6 +11,8 @@ class App extends Component {
       email:"",
       phone:"",
       contactInfoPresent: false,
+      
+      educationEntries: [],
       generalInfo: {
         fullName: "",
         email:"",
@@ -53,6 +55,7 @@ class App extends Component {
                          phone: this.state.phone,
                          contactInfoPresent: this.state.contactInfoPresent
                         }
+    
     return (
         <CvContainer 
           activeForm={activeForm}
