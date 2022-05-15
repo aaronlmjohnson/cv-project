@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CvContainer from "./components/CvContainer";
 import "./App.css"
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor() {
@@ -11,17 +12,15 @@ class App extends Component {
       email:"",
       phone:"",
       contactInfoPresent: false,
-      
-      educationEntries: [],
-      generalInfo: {
-        fullName: "",
-        email:"",
-        phone:""
-      },
+      educationEntries: [
+
+      ]
+
     }
 
     this.changeForm = this.changeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.addEducationEntry = this.addEducationEntry.bind(this);
   };
 
   changeForm = (e)=>{
@@ -48,6 +47,21 @@ class App extends Component {
     });
   }
 
+  addEducationEntry = ()=>{
+    console.log(this.state.educationEntries);
+    this.setState(prevState =>{
+
+      
+        return ({...prevState, educationEntries: [...prevState.educationEntries, {
+          school:"",
+          degree:"",
+          startDate:"",
+          endDate:"",
+          id: uniqid()
+        }]});
+    });
+  }
+
   render() {
     const {activeForm} = this.state
     const generalInfo = {fullName: this.state.fullName,
@@ -55,6 +69,7 @@ class App extends Component {
                          phone: this.state.phone,
                          contactInfoPresent: this.state.contactInfoPresent
                         }
+
     
     return (
         <CvContainer 
@@ -62,6 +77,7 @@ class App extends Component {
           changeForm={this.changeForm}
           handleChange={this.handleChange}
           generalInfo = {generalInfo}
+          addEducationEntry = {this.addEducationEntry}
         />
     );
   }

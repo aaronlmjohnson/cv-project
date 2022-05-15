@@ -5,11 +5,11 @@ import PracticalInfoForm from "./PracticalInfoForm";
 import Preview from "./Preview";
 
 const ActiveForm = (props)=>{
-    const { activeForm, handleChange, generalInfo } = props;
+    const { activeForm, handleChange, generalInfo, addEducationEntry } = props;
 
     const displayActiveForm = ()=>{
         if(activeForm === "general") return <GeneralInfoForm handleChange={handleChange} generalInfo = {generalInfo}/>
-        if(activeForm === "education") return <EducationEntriesForm />
+        if(activeForm === "education") return <EducationEntriesForm addEducationEntry={addEducationEntry}/>
         if(activeForm === "practical") return <PracticalInfoForm />
         return <Preview handleChange={handleChange} generalInfo = {generalInfo}/>
     }

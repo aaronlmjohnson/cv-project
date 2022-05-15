@@ -5,7 +5,7 @@ import "./CvContainer.css"
 //const data = require("../cvData.json");
 
 const CvForm = (props)=>{
-    const { activeForm, changeForm , handleChange, generalInfo} = props;
+    const { activeForm, changeForm , handleChange, generalInfo, addEducationEntry} = props;
     
     return(
         <div id= "cv-container">
@@ -14,6 +14,7 @@ const CvForm = (props)=>{
                 activeForm = {activeForm}
                 handleChange={handleChange}
                 generalInfo = {generalInfo}
+                addEducationEntry = {addEducationEntry}
             />
         </div>
     )
