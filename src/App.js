@@ -12,15 +12,13 @@ class App extends Component {
       email:"",
       phone:"",
       contactInfoPresent: false,
-      educationEntries: [
-
-      ]
-
+      educationEntries: []
     }
 
     this.changeForm = this.changeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addEducationEntry = this.addEducationEntry.bind(this);
+    this.handleEntryChange = this.handleEntryChange.bind(this);
   };
 
   changeForm = (e)=>{
@@ -38,6 +36,17 @@ class App extends Component {
     this.handleContactHeaderDisplay();
   }
 
+  handleEntryChange = (e, key)=>{
+    console.log(this.state);
+    this.setState(prevState => {
+      
+      const selectedEntry = prevState.educationEntries.find( entry => entry.id === key);
+      const prevEntries = prevState.educationEntries.filter( entry => entry.id !== key);
+      selectedEntry[e.target.name] = e.target.value;
+      return ({...prevState, educationEntries:[...prevEntries, selectedEntry]})
+    })
+  }
+
   handleContactHeaderDisplay = ()=>{
     this.setState(prevState =>{
       if(prevState.email || prevState.phone)
@@ -48,10 +57,7 @@ class App extends Component {
   }
 
   addEducationEntry = ()=>{
-    console.log(this.state.educationEntries);
     this.setState(prevState =>{
-
-      
         return ({...prevState, educationEntries: [...prevState.educationEntries, {
           school:"",
           degree:"",
@@ -63,19 +69,20 @@ class App extends Component {
   }
 
   render() {
-    const {activeForm} = this.state
+    const {activeForm, educationEntries} = this.state
     const generalInfo = {fullName: this.state.fullName,
                          email: this.state.email, 
                          phone: this.state.phone,
                          contactInfoPresent: this.state.contactInfoPresent
                         }
 
-    
     return (
         <CvContainer 
           activeForm={activeForm}
+          educationEntries = {educationEntries}
           changeForm={this.changeForm}
           handleChange={this.handleChange}
+          handleEntryChange={this.handleEntryChange}
           generalInfo = {generalInfo}
           addEducationEntry = {this.addEducationEntry}
         />

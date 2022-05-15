@@ -1,24 +1,26 @@
 import React from "react";
 import DateItem from "./DateItem";
-import FormHeader from "./FormHeader";
 import TextItem from "./TextItem";
 
-const EducationInfoForm = ()=>{
-    // const addEntry = ()=>{
-    //     return <button id="add-education-entry">Add Entry</button>
-    // }
+const EducationInfoForm = (props)=>{
+    const {entryInfo, handleEntryChange} = props
 
     return(
-        <div id="educational-experience-form-container">
-            <form id="educational-experience-form">
-                <ul id="educational-experience-form-items">
-                    <TextItem id={"school"} name={"school"} labelValue={"School:"}/>
-                    <TextItem id={"degree"} name={"degree"} labelValue={"Degree:"}/>
-                    <DateItem id={"school-start-date"} name={"schoolStartDate"} labelValue={"Start Date:"} />
-                    <DateItem id={"school-end-date"} name={"schoolEndDate"} labelValue={"End Date:"} />
+        <li className="educational-experience-form-container" 
+            key={entryInfo.id}
+            onChange={(e)=>{
+                handleEntryChange(e, entryInfo.id)
+        }}>
+            <form className="educational-experience-form">
+                <ul className="educational-experience-form-items">
+                    <TextItem className={"school"} name={"school"} labelValue={"School:"}/>
+                    <TextItem className={"degree"} name={"degree"} labelValue={"Degree:"}/>
+                    <DateItem className={"school-start-date"} name={"schoolStartDate"} labelValue={"Start Date:"} />
+                    <DateItem className={"school-end-date"} name={"schoolEndDate"} labelValue={"End Date:"} />
                 </ul>    
             </form>
-        </div> 
+            <br/>
+        </li> 
     )
 }
 
