@@ -4,9 +4,12 @@ import FormHeader from "./FormHeader";
 import TextItem from "./TextItem";
 
 const EducationInfoForm = ()=>{
+    // const addEntry = ()=>{
+    //     return <button id="add-education-entry">Add Entry</button>
+    // }
+
     return(
         <div id="educational-experience-form-container">
-            <FormHeader id="education-info-header" value="Educational Experience:"/>
             <form id="educational-experience-form">
                 <ul id="educational-experience-form-items">
                     <TextItem id={"school"} name={"school"} labelValue={"School:"}/>
