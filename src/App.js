@@ -61,8 +61,8 @@ class App extends Component {
         return ({...prevState, educationEntries: [...prevState.educationEntries, {
           school:"",
           degree:"",
-          startDate:"",
-          endDate:"",
+          schoolStartDate:"",
+          schoolEndDate:"",
           id: uniqid()
         }]});
     });

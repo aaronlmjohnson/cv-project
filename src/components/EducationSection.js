@@ -14,7 +14,6 @@ const EducationSection = (props)=>{
             <ul id="education-entries">
                 {displayHeader()}
                 <EducationEntries educationExperience = {educationEntries} />
-                {/* <EducationEntries educationExperience = { educationExperience} /> */}
             </ul>
         </div>
     );

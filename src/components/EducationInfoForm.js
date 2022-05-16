@@ -4,7 +4,7 @@ import TextItem from "./TextItem";
 
 const EducationInfoForm = (props)=>{
     const {entryInfo, handleEntryChange} = props
-    
+
     return(
         <li className="educational-experience-form-container">
             <form className="educational-experience-form">
@@ -13,10 +13,18 @@ const EducationInfoForm = (props)=>{
                         <label htmlFor={"school"}> {"School:"} </label>
                         <input type="text" name={"school"} onChange={(e)=>{handleEntryChange(e, entryInfo.id)}} value={entryInfo.school}/>
                     </li>
-
-                    <TextItem className={"degree"} name={"degree"} labelValue={"Degree:"}/>
-                    <DateItem className={"school-start-date"} name={"schoolStartDate"} labelValue={"Start Date:"} />
-                    <DateItem className={"school-end-date"} name={"schoolEndDate"} labelValue={"End Date:"} />
+                    <li className="form-item">
+                        <label htmlFor={"degree"}> {"Degree:"} </label>
+                        <input type="text" name={"degree"} onChange={(e)=>{handleEntryChange(e, entryInfo.id)}} value={entryInfo.degree}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"schoolStartDate"}> {"Start Date:"} </label>
+                        <input type="date" name={"schoolStartDate"} onChange={(e)=>{handleEntryChange(e, entryInfo.id)}} value={entryInfo.schoolStartDate}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"schoolEndDate"}> {"End Date:"} </label>
+                        <input type="date" name={"schoolEndDate"} onChange={(e)=>{handleEntryChange(e, entryInfo.id)}} value={entryInfo.schoolEndDate}/>
+                    </li>
                 </ul>    
             </form>
             <br/>
