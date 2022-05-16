@@ -2,6 +2,7 @@ import React from "react";
 import DateItem from "./DateItem";
 import FormHeader from "./FormHeader";
 import EducationInfoForm from "./EducationInfoForm";
+import uniqid from "uniqid"
 
 const EducationEntriesForm = (props)=>{
     const {addEducationEntry, educationEntries, handleEntryChange} = props
@@ -11,7 +12,7 @@ const EducationEntriesForm = (props)=>{
             <FormHeader id="education-entries-form-header" value="Educational Experience:"/>
             <ul id="education-entries-container">
                 {educationEntries.map(entry=>{
-                    return <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange}/>
+                    return <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
                 })}
             </ul>
             <button id="add-education-entry" onClick={addEducationEntry}>Add Entry</button>

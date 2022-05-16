@@ -6,7 +6,7 @@ const EducationInfoForm = (props)=>{
     const {entryInfo, handleEntryChange} = props
     
     return(
-        <li className="educational-experience-form-container" key={entryInfo.id}>
+        <li className="educational-experience-form-container">
             <form className="educational-experience-form">
                 <ul className="educational-experience-form-items">
                     <li className="form-item">

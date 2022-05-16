@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   handleEntryChange = (e, key)=>{
-    console.log(e.target);
     this.setState(prevState => {
       
       const selectedEntry = prevState.educationEntries.find( entry => entry.id === key);
@@ -55,13 +54,6 @@ class App extends Component {
       else
         return({...prevState, contactInfoPresent: false})
     });
-  }
-  
-  handleEducationHeaderDisplay = ()=>{
-    this.setState(prevState => {
-      const isEmpty = prevState.educationEntries.length < 1 ? true : false;
-      return ({...prevState, educationInfoPresent: isEmpty})
-    })
   }
 
   addEducationEntry = ()=>{

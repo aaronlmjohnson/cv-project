@@ -4,13 +4,16 @@ import EducationEntries from "./EducationEntries";
 
 const EducationSection = (props)=>{
     const { educationEntries } = props;
-    console.log(educationEntries);
+    const displayHeader = ()=>{
+        if(educationEntries.length > 0)
+            return <FormHeader id={"education-experience-header"} value="Education Experience" />
+
+    }
     return( 
         <div id="education-section">
             <ul id="education-entries">
-                <FormHeader id={"education-experience-header"} value="Education Experience" />
+                {displayHeader()}
                 <EducationEntries educationExperience = {educationEntries} />
-                
                 {/* <EducationEntries educationExperience = { educationExperience} /> */}
             </ul>
         </div>
