@@ -13,7 +13,7 @@ const ActiveForm = (props)=>{
             return <EducationEntriesForm addEducationEntry={addEducationEntry} educationEntries = {educationEntries} handleEntryChange={handleEntryChange}/>
         }
         if(activeForm === "practical") return <PracticalInfoForm />
-        return <Preview handleChange={handleChange} generalInfo = {generalInfo}/>
+        return <Preview handleChange={handleChange} generalInfo = {generalInfo} educationEntries = {educationEntries}/>
     }
     return(
         <div id= "active-form">

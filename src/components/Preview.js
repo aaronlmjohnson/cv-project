@@ -8,12 +8,14 @@ import "./Preview.css";
 const Preview = (props)=>{
     //const {generalInfo, educationExperience, practicalExperience } = props.preview;
     const {fullName} = props.generalInfo;
-    const {handleChange} = props;
+    const {handleChange, educationEntries} = props;
+
     return(
         
         <div id="preview">
             <FormHeader id={"full-name-preview"} value={fullName}/>
             <ContactSection generalInfo = { props.generalInfo }/>
+            <EducationSection educationEntries = {educationEntries}/>
             {/* <EducationSection educationExperience = { educationExperience }/>
             <PracticalSection practicalExperience = { practicalExperience } /> */}
         </div>

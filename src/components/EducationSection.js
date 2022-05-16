@@ -3,12 +3,15 @@ import FormHeader from "./FormHeader";
 import EducationEntries from "./EducationEntries";
 
 const EducationSection = (props)=>{
-    const { educationExperience } = props;
+    const { educationEntries } = props;
+    console.log(educationEntries);
     return( 
         <div id="education-section">
             <ul id="education-entries">
                 <FormHeader id={"education-experience-header"} value="Education Experience" />
-                <EducationEntries educationExperience = { educationExperience} />
+                <EducationEntries educationExperience = {educationEntries} />
+                
+                {/* <EducationEntries educationExperience = { educationExperience} /> */}
             </ul>
         </div>
     );
