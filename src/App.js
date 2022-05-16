@@ -19,6 +19,7 @@ class App extends Component {
     this.changeForm = this.changeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addEducationEntry = this.addEducationEntry.bind(this);
+    this.deleteEducationEntry = this.deleteEducationEntry.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
   };
 
@@ -68,6 +69,15 @@ class App extends Component {
     });
   }
 
+  deleteEducationEntry = (e)=>{
+    this.setState( prevState =>{
+      const key = e.target.parentNode.getAttribute('react-key');
+      const filteredEntries = prevState.educationEntries.filter( entry => entry.id !== key);
+      return ({...prevState, educationEntries:filteredEntries})
+    })
+    
+  }
+
   render() {
     const {activeForm, educationEntries} = this.state
     const generalInfo = {fullName: this.state.fullName,
@@ -85,6 +95,7 @@ class App extends Component {
           handleEntryChange={this.handleEntryChange}
           generalInfo = {generalInfo}
           addEducationEntry = {this.addEducationEntry}
+          deleteEducationEntry = {this.deleteEducationEntry}
         />
     );
   }
