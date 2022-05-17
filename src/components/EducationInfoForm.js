@@ -11,7 +11,7 @@ const EducationInfoForm = (props)=>{
                 <ul className="educational-experience-form-items">
                     <li className="form-item">
                         <label htmlFor={"school"}> {"School:"} </label>
-                        <input type="text" name={"school"} onChange={(e)=>{handleEntryChange(e, entryInfo)}} value={entryInfo.school}/>
+                        <input type="text" name={"school"} onChange={(e)=>{handleEntryChange(e, entryInfo.id)}} value={entryInfo.school}/>
                     </li>
                     <li className="form-item">
                         <label htmlFor={"degree"}> {"Degree:"} </label>
