@@ -1,20 +1,40 @@
 import React from "react";
 import DateItem from "./DateItem";
-import FormHeader from "./FormHeader";
 import TextArea from "./TextArea";
 import TextItem from "./TextItem";
 
-const PracticalInfoForm = ()=>{
+const PracticalInfoForm = (props)=>{
+    const {entryInfo, handlePracticalEntryChange} = props;
+    console.log(entryInfo);
     return(
         <div id="practical-experience-form-container">
-            <FormHeader id="practical-info-header" value="Practical Experience:"/>
             <form id="practical-experience-form">
                 <ul id="practical-experience-form-items">
-                <TextItem id={"company-name"} name={"companyName"} value={"Company Name:"}/>
-                <TextItem id={"position-title"} name={"positionTitle"} value={"Position Title:"}/>
-                <DateItem id={"work-start-date"} name={"workStartDate"} value={"Start Date:"} />
-                <DateItem id={"work-end-date"} name={"workEndDate"} value={"End Date:"} />
-                <TextArea id={"job-tasks"} name={"jobTasks"} value={"Job Tasks:"}/>
+                    <li className="form-item">
+                        <label htmlFor={"company"}> {"Company Name:"} </label>
+                        <input type="text" name={"company"} 
+                               onChange={(e)=>{handlePracticalEntryChange(e, entryInfo.id)}} value={entryInfo.company}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"position"}> {"Position Title:"} </label>
+                        <input type="text" name={"position"} 
+                               onChange={(e)=>{handlePracticalEntryChange(e, entryInfo.id)}} value={entryInfo.position}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"workStartDate"}> {"Start Date:"} </label>
+                        <input type="date" name={"workStartDate"} 
+                               onChange={(e)=>{handlePracticalEntryChange(e, entryInfo.id)}} value={entryInfo.workStartDate}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"workEndDate"}> {"End Date:"} </label>
+                        <input type="date" name={"workEndDate"} 
+                               onChange={(e)=>{handlePracticalEntryChange(e, entryInfo.id)}} value={entryInfo.workEndDate}/>
+                    </li>
+                    <li className="form-item">
+                        <label htmlFor={"tasks"}> {"Responsibilities:"} </label>
+                        <textarea name={"tasks"} 
+                               onChange={(e)=>{handlePracticalEntryChange(e, entryInfo.id)}} value={entryInfo.tasks} row="4" cols="50"/>
+                    </li>
                 </ul>    
             </form>
         </div> 

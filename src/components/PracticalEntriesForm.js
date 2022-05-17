@@ -5,15 +5,15 @@ import PracticalInfoForm from "./PracticalInfoForm";
 import uniqid from "uniqid"
 
 const PracticalEntriesForm = (props)=>{
-    const {addPracticalEntry} = props
+    const {addPracticalEntry, handlePracticalEntryChange, practicalEntries} = props
 
     return(
         <div id="practical-experience-entries-form-container">
             <FormHeader id="practical-entries-form-header" value="Practical Experience:"/>
             <ul id="practical-entries-container">
-                {/* {educationEntries.map(entry=>{
-                    return <PracticalInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
-                })} */}
+                {practicalEntries.map(entry=>{
+                    return <PracticalInfoForm entryInfo = {entry} handlePracticalEntryChange = {handlePracticalEntryChange} key={entry.id}/>
+                })}
             </ul>
             <button id="add-practical-entry" onClick={addPracticalEntry}>Add Entry</button>
         </div> 

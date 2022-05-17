@@ -50,6 +50,16 @@ class App extends Component {
     })
   }
 
+  handlePracticalEntryChange = (e, key) =>{
+    this.setState(prevState => {
+      
+      const selectedEntry = prevState.practicalEntries.find( entry => entry.id === key);
+      const prevEntries = prevState.practicalEntries.filter( entry => entry.id !== key);
+      selectedEntry[e.target.name] = e.target.value;
+      return ({...prevState, practicalEntries:[...prevEntries, selectedEntry]})
+    })
+  }
+
   handleContactHeaderDisplay = ()=>{
     this.setState(prevState =>{
       if(prevState.email || prevState.phone)
@@ -72,7 +82,6 @@ class App extends Component {
   }
 
   addPracticalEntry = ()=>{
-    console.log(this.state.practicalEntries);
       this.setState(prevState =>{
         return ({...prevState, practicalEntries: [...prevState.practicalEntries, {
           company:"",
@@ -95,7 +104,7 @@ class App extends Component {
   }
 
   render() {
-    const {activeForm, educationEntries} = this.state
+    const {activeForm, educationEntries, practicalEntries} = this.state
     const generalInfo = {fullName: this.state.fullName,
                          email: this.state.email, 
                          phone: this.state.phone,
@@ -113,6 +122,8 @@ class App extends Component {
           addEducationEntry = {this.addEducationEntry}
           deleteEducationEntry = {this.deleteEducationEntry}
           addPracticalEntry = {this.addPracticalEntry}
+          practicalEntries = {practicalEntries}
+          handlePracticalEntryChange = {this.handlePracticalEntryChange}
         />
     );
   }

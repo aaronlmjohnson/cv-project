@@ -7,8 +7,8 @@ import "./CvContainer.css"
 const CvForm = (props)=>{
     const { activeForm, changeForm , handleChange, handleEntryChange,
             generalInfo, educationEntries, addEducationEntry,
-            deleteEducationEntry, addPracticalEntry} = props;
-    
+            deleteEducationEntry, addPracticalEntry,
+            handlePracticalEntryChange, practicalEntries} = props;
     return(
         <div id= "cv-container">
             <SectionSidebar changeForm = {changeForm}/>
@@ -21,6 +21,8 @@ const CvForm = (props)=>{
                 addEducationEntry = {addEducationEntry}
                 deleteEducationEntry = {deleteEducationEntry}
                 addPracticalEntry = {addPracticalEntry}
+                handlePracticalEntryChange = {handlePracticalEntryChange}
+                practicalEntries = {practicalEntries}
             />
         </div>
     )
