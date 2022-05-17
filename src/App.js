@@ -13,7 +13,8 @@ class App extends Component {
       phone:"",
       contactInfoPresent: false,
       educationInfoPresent: false,
-      educationEntries: []
+      educationEntries: [],
+      practicalEntries:[]
     }
 
     this.changeForm = this.changeForm.bind(this);
@@ -21,6 +22,7 @@ class App extends Component {
     this.addEducationEntry = this.addEducationEntry.bind(this);
     this.deleteEducationEntry = this.deleteEducationEntry.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
+    this.addPracticalEntry = this.addPracticalEntry.bind(this);
   };
 
   changeForm = (e)=>{
@@ -69,6 +71,20 @@ class App extends Component {
     });
   }
 
+  addPracticalEntry = ()=>{
+    console.log(this.state.practicalEntries);
+      this.setState(prevState =>{
+        return ({...prevState, practicalEntries: [...prevState.practicalEntries, {
+          company:"",
+          position:"",
+          workStartDate:"",
+          workEndDate:"",
+          tasks:"",
+          id: uniqid(),
+        }]});
+      });
+  }
+
   deleteEducationEntry = (e)=>{
     this.setState( prevState =>{
       const key = e.target.parentNode.getAttribute('react-key');
@@ -96,6 +112,7 @@ class App extends Component {
           generalInfo = {generalInfo}
           addEducationEntry = {this.addEducationEntry}
           deleteEducationEntry = {this.deleteEducationEntry}
+          addPracticalEntry = {this.addPracticalEntry}
         />
     );
   }
