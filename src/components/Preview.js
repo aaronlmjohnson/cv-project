@@ -7,7 +7,7 @@ import "./Preview.css";
 
 const Preview = (props)=>{
     const {fullName} = props.generalInfo;
-    const {handleChange, educationEntries, deleteEducationEntry} = props;
+    const {handleChange, educationEntries, practicalEntries, deleteEducationEntry} = props;
 
     return(
         
@@ -15,8 +15,7 @@ const Preview = (props)=>{
             <FormHeader id={"full-name-preview"} value={fullName}/>
             <ContactSection generalInfo = { props.generalInfo }/>
             <EducationSection educationEntries = {educationEntries} deleteEducationEntry={deleteEducationEntry}/>
-            {/* <EducationSection educationExperience = { educationExperience }/>
-            <PracticalSection practicalExperience = { practicalExperience } /> */}
+            <PracticalSection practicalEntries = {practicalEntries} />
         </div>
     )
 }

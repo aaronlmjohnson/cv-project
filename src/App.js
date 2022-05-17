@@ -41,9 +41,11 @@ class App extends Component {
   }
 
   handleEntryChange = (e, key)=>{
+    
     this.setState(prevState => {
       
       const selectedEntry = prevState.educationEntries.find( entry => entry.id === key);
+      console.log(selectedEntry)
       const prevEntries = prevState.educationEntries.filter( entry => entry.id !== key);
       selectedEntry[e.target.name] = e.target.value;
       return ({...prevState, educationEntries:[...prevEntries, selectedEntry]})

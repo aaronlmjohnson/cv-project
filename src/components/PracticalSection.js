@@ -3,12 +3,15 @@ import FormHeader from "./FormHeader";
 import PracticalEntries from "./PracticalEntries";
 
 const PracticalSection = (props)=>{
-    const { practicalExperience } = props;
+    const { practicalEntries } = props;
+    const displayHeader = ()=>{
+       return (<FormHeader id={"practical-experience-header"} value="Practical Experience" />);
+    }
     return( 
         <div id="practical-section">
+            {displayHeader()}
             <ul id="practical-entries">
-                <FormHeader id={"practical-experience-header"} value="Practical Experience" />
-                <PracticalEntries practicalExperience = { practicalExperience } />
+                <PracticalEntries practicalEntries = { practicalEntries } />
             </ul>
         </div>
     );

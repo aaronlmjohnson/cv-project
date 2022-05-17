@@ -26,6 +26,7 @@ const ActiveForm = (props)=>{
                     handleChange={handleChange} 
                     generalInfo = {generalInfo} 
                     educationEntries = {educationEntries} 
+                    practicalEntries = {practicalEntries}
                     deleteEducationEntry ={deleteEducationEntry}
                 />
     }
