@@ -20,7 +20,7 @@ class App extends Component {
     this.changeForm = this.changeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addEducationEntry = this.addEducationEntry.bind(this);
-    this.deleteEducationEntry = this.deleteEducationEntry.bind(this);
+    this.deleteEntry = this.deleteEntry.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
     this.addPracticalEntry = this.addPracticalEntry.bind(this);
   };
@@ -40,25 +40,14 @@ class App extends Component {
     this.handleContactHeaderDisplay();
   }
 
-  handleEntryChange = (e, key)=>{
+  handleEntryChange = (e, key, entryName)=>{
     
     this.setState(prevState => {
       
-      const selectedEntry = prevState.educationEntries.find( entry => entry.id === key);
-      console.log(selectedEntry)
-      const prevEntries = prevState.educationEntries.filter( entry => entry.id !== key);
+      const selectedEntry = prevState[entryName].find( entry => entry.id === key);
+      const prevEntries = prevState[entryName].filter( entry => entry.id !== key);
       selectedEntry[e.target.name] = e.target.value;
-      return ({...prevState, educationEntries:[...prevEntries, selectedEntry]})
-    })
-  }
-
-  handlePracticalEntryChange = (e, key) =>{
-    this.setState(prevState => {
-      
-      const selectedEntry = prevState.practicalEntries.find( entry => entry.id === key);
-      const prevEntries = prevState.practicalEntries.filter( entry => entry.id !== key);
-      selectedEntry[e.target.name] = e.target.value;
-      return ({...prevState, practicalEntries:[...prevEntries, selectedEntry]})
+      return ({...prevState, [entryName]:[...prevEntries, selectedEntry]})
     })
   }
 
@@ -96,11 +85,12 @@ class App extends Component {
       });
   }
 
-  deleteEducationEntry = (e)=>{
+  deleteEntry = (e, entriesName)=>{
+    console.log(e)
     this.setState( prevState =>{
       const key = e.target.parentNode.getAttribute('react-key');
-      const filteredEntries = prevState.educationEntries.filter( entry => entry.id !== key);
-      return ({...prevState, educationEntries:filteredEntries})
+      const filteredEntries = prevState[entriesName].filter( entry => entry.id !== key);
+      return ({...prevState, [entriesName]:filteredEntries})
     })
     
   }
@@ -122,7 +112,7 @@ class App extends Component {
           handleEntryChange={this.handleEntryChange}
           generalInfo = {generalInfo}
           addEducationEntry = {this.addEducationEntry}
-          deleteEducationEntry = {this.deleteEducationEntry}
+          deleteEntry = {this.deleteEntry}
           addPracticalEntry = {this.addPracticalEntry}
           practicalEntries = {practicalEntries}
           handlePracticalEntryChange = {this.handlePracticalEntryChange}

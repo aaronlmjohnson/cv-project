@@ -13,7 +13,9 @@ const PracticalEntries = (props)=>{
                 <br/>
                 <button className="edit-entry">Edit</button>
                 <button className="delete-entry">Delete</button>
+                <br/>
             </li>
+            
         ) 
     })
 }

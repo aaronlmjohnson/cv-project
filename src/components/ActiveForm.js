@@ -2,12 +2,11 @@ import React from "react";
 import EducationEntriesForm from "./EducationEntriesForm";
 import GeneralInfoForm from "./GeneralInfoForm";
 import PracticalEntriesForm from "./PracticalEntriesForm";
-import PracticalInfoForm from "./PracticalInfoForm";
 import Preview from "./Preview";
 
 const ActiveForm = (props)=>{
     const { activeForm, handleChange, handleEntryChange, generalInfo, 
-            addEducationEntry, educationEntries, deleteEducationEntry, 
+            addEducationEntry, educationEntries, deleteEntry, 
             addPracticalEntry, handlePracticalEntryChange, practicalEntries } = props;
 
     const displayActiveForm = ()=>{
@@ -18,7 +17,7 @@ const ActiveForm = (props)=>{
         if(activeForm === "practical") 
             return <PracticalEntriesForm 
                         addPracticalEntry = {addPracticalEntry}
-                        handlePracticalEntryChange = {handlePracticalEntryChange}
+                        handleEntryChange = {handleEntryChange}
                         practicalEntries = {practicalEntries}
 
                     />
@@ -27,7 +26,7 @@ const ActiveForm = (props)=>{
                     generalInfo = {generalInfo} 
                     educationEntries = {educationEntries} 
                     practicalEntries = {practicalEntries}
-                    deleteEducationEntry ={deleteEducationEntry}
+                    deleteEntry ={deleteEntry}
                 />
     }
     return(

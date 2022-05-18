@@ -7,7 +7,7 @@ import "./CvContainer.css"
 const CvForm = (props)=>{
     const { activeForm, changeForm , handleChange, handleEntryChange,
             generalInfo, educationEntries, addEducationEntry,
-            deleteEducationEntry, addPracticalEntry,
+            deleteEntry, addPracticalEntry,
             handlePracticalEntryChange, practicalEntries} = props;
     return(
         <div id= "cv-container">
@@ -19,7 +19,7 @@ const CvForm = (props)=>{
                 handleEntryChange={handleEntryChange}
                 generalInfo = {generalInfo}
                 addEducationEntry = {addEducationEntry}
-                deleteEducationEntry = {deleteEducationEntry}
+                deleteEntry = {deleteEntry}
                 addPracticalEntry = {addPracticalEntry}
                 handlePracticalEntryChange = {handlePracticalEntryChange}
                 practicalEntries = {practicalEntries}

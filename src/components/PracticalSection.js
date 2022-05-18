@@ -5,7 +5,8 @@ import PracticalEntries from "./PracticalEntries";
 const PracticalSection = (props)=>{
     const { practicalEntries } = props;
     const displayHeader = ()=>{
-       return (<FormHeader id={"practical-experience-header"} value="Practical Experience" />);
+        if(practicalEntries.length > 0)
+            return (<FormHeader id={"practical-experience-header"} value="Practical Experience" />);
     }
     return( 
         <div id="practical-section">
