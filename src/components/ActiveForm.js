@@ -6,7 +6,7 @@ import Preview from "./Preview";
 
 const ActiveForm = (props)=>{
     const { activeForm, handleChange, handleEntryChange, generalInfo, 
-            addEducationEntry, educationEntries, deleteEntry, 
+            addEducationEntry, educationEntries, deleteEntry, toggleEditStatus,
             addPracticalEntry, handlePracticalEntryChange, practicalEntries } = props;
 
     const displayActiveForm = ()=>{
@@ -27,6 +27,7 @@ const ActiveForm = (props)=>{
                     educationEntries = {educationEntries} 
                     practicalEntries = {practicalEntries}
                     deleteEntry ={deleteEntry}
+                    toggleEditStatus = {toggleEditStatus}
                 />
     }
     return(

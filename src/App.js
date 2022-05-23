@@ -16,13 +16,14 @@ class App extends Component {
       educationEntries: [],
       practicalEntries:[]
     }
-
+//,
     this.changeForm = this.changeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addEducationEntry = this.addEducationEntry.bind(this);
     this.deleteEntry = this.deleteEntry.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
     this.addPracticalEntry = this.addPracticalEntry.bind(this);
+    this.toggleEditStatus = this.toggleEditStatus.bind(this);
   };
 
   changeForm = (e)=>{
@@ -41,9 +42,7 @@ class App extends Component {
   }
 
   handleEntryChange = (e, key, entryName)=>{
-    
     this.setState(prevState => {
-      
       const selectedEntry = prevState[entryName].find( entry => entry.id === key);
       const prevEntries = prevState[entryName].filter( entry => entry.id !== key);
       selectedEntry[e.target.name] = e.target.value;
@@ -67,7 +66,8 @@ class App extends Component {
           degree:"",
           schoolStartDate:"",
           schoolEndDate:"",
-          id: uniqid()
+          id: uniqid(),
+          isBeingEdited: false
         }]});
     });
   }
@@ -81,18 +81,25 @@ class App extends Component {
           workEndDate:"",
           tasks:"",
           id: uniqid(),
+          isBeingEdited: false
         }]});
       });
   }
 
   deleteEntry = (e, entriesName)=>{
-    console.log(e)
     this.setState( prevState =>{
       const key = e.target.parentNode.getAttribute('react-key');
       const filteredEntries = prevState[entriesName].filter( entry => entry.id !== key);
       return ({...prevState, [entriesName]:filteredEntries})
     })
     
+  }
+
+  toggleEditStatus = (e, key, entryName) =>{
+      let entries = [...this.state[entryName]];
+      let entry = entries.find((entry)=> key === entry.id);
+      entry.isBeingEdited = entry.isBeingEdited === false ? true : false;
+      this.setState({[entryName]: entries});
   }
 
   render() {
@@ -116,6 +123,7 @@ class App extends Component {
           addPracticalEntry = {this.addPracticalEntry}
           practicalEntries = {practicalEntries}
           handlePracticalEntryChange = {this.handlePracticalEntryChange}
+          toggleEditStatus = {this.toggleEditStatus}
         />
     );
   }

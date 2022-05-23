@@ -3,7 +3,7 @@ import FormHeader from "./FormHeader";
 import EducationEntries from "./EducationEntries";
 
 const EducationSection = (props)=>{
-    const { educationEntries, deleteEntry } = props;
+    const { educationEntries, deleteEntry, toggleEditStatus } = props;
 
     const displayHeader = ()=>{
         if(educationEntries.length > 0)
@@ -14,7 +14,7 @@ const EducationSection = (props)=>{
         <div id="education-section">
             <ul id="education-entries">
                 {displayHeader()}
-                <EducationEntries educationExperience = {educationEntries} deleteEntry = {deleteEntry} />
+                <EducationEntries educationExperience = {educationEntries} deleteEntry = {deleteEntry} toggleEditStatus = {toggleEditStatus}/>
             </ul>
         </div>
     );

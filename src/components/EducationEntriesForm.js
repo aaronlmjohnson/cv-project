@@ -12,7 +12,11 @@ const EducationEntriesForm = (props)=>{
             <FormHeader id="education-entries-form-header" value="Educational Experience:"/>
             <ul id="education-entries-container">
                 {educationEntries.map(entry=>{
-                    return <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
+                    return (
+                        <li className="educational-experience-form-container">
+                            <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
+                        </li>
+                    )
                 })}
             </ul>
             <button id="add-education-entry" onClick={addEducationEntry}>Add Entry</button>
