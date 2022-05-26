@@ -103,27 +103,23 @@ class App extends Component {
   }
 
   render() {
-    const {activeForm, educationEntries, practicalEntries} = this.state
-    const generalInfo = {fullName: this.state.fullName,
-                         email: this.state.email, 
-                         phone: this.state.phone,
-                         contactInfoPresent: this.state.contactInfoPresent
-                        }
+    const methods = {
+      handleChange: this.handleChange,
+      changeForm: this.changeForm,
+      handleEntryChange: this.handleEntryChange,
+      addEducationEntry: this.addEducationEntry,
+      addPracticalEntry: this.addPracticalEntry,
+      deleteEntry: this.deleteEntry,
+      toggleEditStatus: this.toggleEditStatus
+    }
+    
 
     return (
-        <CvContainer 
-          activeForm={activeForm}
-          educationEntries = {educationEntries}
-          changeForm={this.changeForm}
-          handleChange={this.handleChange}
-          handleEntryChange={this.handleEntryChange}
-          generalInfo = {generalInfo}
-          addEducationEntry = {this.addEducationEntry}
-          deleteEntry = {this.deleteEntry}
-          addPracticalEntry = {this.addPracticalEntry}
-          practicalEntries = {practicalEntries}
-          handlePracticalEntryChange = {this.handlePracticalEntryChange}
-          toggleEditStatus = {this.toggleEditStatus}
+        <CvContainer
+          state={this.state}
+          methods={
+            methods
+          }
         />
     );
   }

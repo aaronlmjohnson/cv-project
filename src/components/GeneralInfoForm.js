@@ -5,7 +5,13 @@ import PhoneItem from "./PhoneItem";
 import TextItem from "./TextItem";
 
 const GeneralInfoForm = (props)=>{
-    const {handleChange, generalInfo } = props
+    const  {handleChange} = props.methods
+    
+    const generalInfo = {
+        fullName: props.state.fullName,
+        email: props.state.email,
+        phone: props.state.phone
+    }
     return(
         <div id="general-info-form-container">
             <FormHeader id="general-info-header" value="General Information"/>

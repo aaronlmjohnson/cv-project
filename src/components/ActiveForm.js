@@ -5,29 +5,22 @@ import PracticalEntriesForm from "./PracticalEntriesForm";
 import Preview from "./Preview";
 
 const ActiveForm = (props)=>{
-    const { activeForm, handleChange, handleEntryChange, generalInfo, 
-            addEducationEntry, educationEntries, deleteEntry, toggleEditStatus,
-            addPracticalEntry, handlePracticalEntryChange, practicalEntries } = props;
-
     const displayActiveForm = ()=>{
-        if(activeForm === "general") return <GeneralInfoForm handleChange={handleChange} generalInfo = {generalInfo}/>
-        if(activeForm === "education"){
-            return <EducationEntriesForm addEducationEntry={addEducationEntry} educationEntries = {educationEntries} handleEntryChange={handleEntryChange}/>
-        }
-        if(activeForm === "practical") 
-            return <PracticalEntriesForm 
-                        addPracticalEntry = {addPracticalEntry}
-                        handleEntryChange = {handleEntryChange}
-                        practicalEntries = {practicalEntries}
+        const { activeForm } = props.state;
 
-                    />
+        if(activeForm === "general") return <GeneralInfoForm state={props.state} methods={props.methods}/>
+        // if(activeForm === "education"){
+        //     return <EducationEntriesForm addEducationEntry={addEducationEntry} educationEntries = {educationEntries} handleEntryChange={handleEntryChange}/>
+        // }
+        // if(activeForm === "practical") 
+        //     return <PracticalEntriesForm 
+        //                 addPracticalEntry = {addPracticalEntry}
+        //                 handleEntryChange = {handleEntryChange}
+        //                 practicalEntries = {practicalEntries}
+
+        //             />
         return <Preview 
-                    handleChange={handleChange} 
-                    generalInfo = {generalInfo} 
-                    educationEntries = {educationEntries} 
-                    practicalEntries = {practicalEntries}
-                    deleteEntry ={deleteEntry}
-                    toggleEditStatus = {toggleEditStatus}
+                    state ={props.state} methods={props.methods}
                 />
     }
     return(

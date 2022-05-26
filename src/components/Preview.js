@@ -6,16 +6,20 @@ import PracticalSection from "./PracticalSection";
 import "./Preview.css";
 
 const Preview = (props)=>{
-    const {fullName} = props.generalInfo;
-    const {handleChange, educationEntries, practicalEntries, deleteEntry, toggleEditStatus} = props;
+    const generalInfo = {fullName: props.state.fullName,
+         email: props.state.email,
+         phone: props.state.phone,
+         contactInfoPresent: props.state.contactInfoPresent
+        };
+    const {handleChange, deleteEntry, toggleEditStatus} = props.methods;
 
     return(
         
         <div id="preview">
-            <FormHeader id={"full-name-preview"} value={fullName}/>
-            <ContactSection generalInfo = { props.generalInfo }/>
-            <EducationSection educationEntries = {educationEntries} deleteEntry={deleteEntry} toggleEditStatus={toggleEditStatus}/>
-            <PracticalSection practicalEntries = {practicalEntries} />
+            <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
+            <ContactSection generalInfo = { generalInfo }/>
+            {/* <EducationSection educationEntries = {educationEntries} deleteEntry={deleteEntry} toggleEditStatus={toggleEditStatus}/>
+            <PracticalSection practicalEntries = {practicalEntries} /> */}
         </div>
     )
 }

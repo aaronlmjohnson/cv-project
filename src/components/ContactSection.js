@@ -3,6 +3,7 @@ import FormHeader from "./FormHeader";
 
 const ContactSection = (props)=>{
     const { generalInfo } = props;
+
     const doubleClick = (e)=>{
         console.log(e.target);
     }
