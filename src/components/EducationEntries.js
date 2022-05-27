@@ -4,7 +4,6 @@ const EducationEntries = (props)=>{
     const { educationExperience, deleteEntry, toggleEditStatus } = props;
     
     const displayEntry = (entry)=>{
-        console.log(entry)
         if(!entry.isBeingEdited){
             return (
                 <li className="education-entry" key={entry.id} react-key={entry.id}>

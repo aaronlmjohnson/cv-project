@@ -42,12 +42,10 @@ class App extends Component {
   }
 
   handleEntryChange = (e, key, entryName)=>{
-    this.setState(prevState => {
-      const selectedEntry = prevState[entryName].find( entry => entry.id === key);
-      const prevEntries = prevState[entryName].filter( entry => entry.id !== key);
-      selectedEntry[e.target.name] = e.target.value;
-      return ({...prevState, [entryName]:[...prevEntries, selectedEntry]})
-    })
+      let entries = [...this.state[entryName]];
+      let entry = entries.find((entry)=> key === entry.id);
+      entry[e.target.name] = e.target.value
+      this.setState({[entryName]: entries});
   }
 
   handleContactHeaderDisplay = ()=>{

@@ -8,10 +8,11 @@ const ActiveForm = (props)=>{
     const displayActiveForm = ()=>{
         const { activeForm } = props.state;
 
-        if(activeForm === "general") return <GeneralInfoForm state={props.state} methods={props.methods}/>
-        if(activeForm === "education"){
-            return <EducationEntriesForm educationEntries = {props.state.educationEntries} methods={props.methods}/>
-        }
+        if(activeForm === "general") 
+            return <GeneralInfoForm state={props.state} methods={props.methods}/>
+        if(activeForm === "education")
+            return <EducationEntriesForm state={props.state} methods={props.methods}/>
+        
         // if(activeForm === "practical") 
         //     return <PracticalEntriesForm 
         //                 addPracticalEntry = {addPracticalEntry}
@@ -19,9 +20,7 @@ const ActiveForm = (props)=>{
         //                 practicalEntries = {practicalEntries}
 
         //             />
-        return <Preview 
-                    state ={props.state} methods={props.methods}
-                />
+        return <Preview state ={props.state} methods={props.methods}/>
     }
     return(
         <div id= "active-form">

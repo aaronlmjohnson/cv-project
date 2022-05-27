@@ -5,7 +5,7 @@ import EducationInfoForm from "./EducationInfoForm";
 import uniqid from "uniqid"
 
 const EducationEntriesForm = (props)=>{
-    const { educationEntries} = props
+    const { educationEntries} = props.state
     const {addEducationEntry, handleEntryChange} = props.methods
 
     return(
@@ -17,7 +17,7 @@ const EducationEntriesForm = (props)=>{
                         <li className="educational-experience-form-container">
                             <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
                         </li>
-                    )
+                    );
                 })}
             </ul>
             <button id="add-education-entry" onClick={addEducationEntry}>Add Entry</button>
