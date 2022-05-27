@@ -18,8 +18,8 @@ const Preview = (props)=>{
         <div id="preview">
             <FormHeader id={"full-name-preview"} value={generalInfo.fullName}/>
             <ContactSection generalInfo = { generalInfo }/>
-            {/* <EducationSection educationEntries = {educationEntries} deleteEntry={deleteEntry} toggleEditStatus={toggleEditStatus}/>
-            <PracticalSection practicalEntries = {practicalEntries} /> */}
+            <EducationSection state={props.state} methods={props.methods}/>
+            {/* <PracticalSection practicalEntries = {practicalEntries} /> */}
         </div>
     )
 }

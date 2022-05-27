@@ -5,7 +5,8 @@ import EducationInfoForm from "./EducationInfoForm";
 import uniqid from "uniqid"
 
 const EducationEntriesForm = (props)=>{
-    const {addEducationEntry, educationEntries, handleEntryChange} = props
+    const { educationEntries} = props
+    const {addEducationEntry, handleEntryChange} = props.methods
 
     return(
         <div id="educational-experience-entries-form-container">

@@ -9,9 +9,9 @@ const ActiveForm = (props)=>{
         const { activeForm } = props.state;
 
         if(activeForm === "general") return <GeneralInfoForm state={props.state} methods={props.methods}/>
-        // if(activeForm === "education"){
-        //     return <EducationEntriesForm addEducationEntry={addEducationEntry} educationEntries = {educationEntries} handleEntryChange={handleEntryChange}/>
-        // }
+        if(activeForm === "education"){
+            return <EducationEntriesForm educationEntries = {props.state.educationEntries} methods={props.methods}/>
+        }
         // if(activeForm === "practical") 
         //     return <PracticalEntriesForm 
         //                 addPracticalEntry = {addPracticalEntry}
