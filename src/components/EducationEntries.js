@@ -1,7 +1,9 @@
 import React from "react";
+import EditEducationEntryForm from "./EditEducationEntryForm";
 
 const EducationEntries = (props)=>{
-    const { educationExperience, deleteEntry, toggleEditStatus } = props;
+    const { deleteEntry, toggleEditStatus } = props.methods;
+    const {educationExperience} = props;
     
     const displayEntry = (entry)=>{
         if(!entry.isBeingEdited){
@@ -17,7 +19,7 @@ const EducationEntries = (props)=>{
             )
         }
         else{
-            return(<div>Edit this</div>)
+            return (<EditEducationEntryForm entryInfo ={entry} methods={props.methods}/>)
         }
     }
 
@@ -31,6 +33,3 @@ const EducationEntries = (props)=>{
 }
 
 export default EducationEntries;
-
-
-{/* */}

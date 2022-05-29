@@ -15,7 +15,7 @@ const EducationSection = (props)=>{
         <div id="education-section">
             <ul id="education-entries">
                 {displayHeader()}
-                <EducationEntries educationExperience = {educationEntries} deleteEntry = {deleteEntry} toggleEditStatus = {toggleEditStatus}/>
+                <EducationEntries educationExperience = {educationEntries} methods={props.methods}/>
             </ul>
         </div>
     );

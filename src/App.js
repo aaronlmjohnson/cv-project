@@ -13,7 +13,14 @@ class App extends Component {
       phone:"",
       contactInfoPresent: false,
       educationInfoPresent: false,
-      educationEntries: [],
+      educationEntries: [
+          {school:"University of Arkansas",
+        degree:"Music",
+        schoolStartDate:"2008-8-20",
+        schoolEndDate:"2012-5-20",
+        id: uniqid(),
+        isBeingEdited: false}
+    ],
       practicalEntries:[]
     }
 //,
@@ -24,6 +31,7 @@ class App extends Component {
     this.handleEntryChange = this.handleEntryChange.bind(this);
     this.addPracticalEntry = this.addPracticalEntry.bind(this);
     this.toggleEditStatus = this.toggleEditStatus.bind(this);
+    this.submitEdit = this.submitEdit.bind(this);
   };
 
   changeForm = (e)=>{
@@ -100,7 +108,17 @@ class App extends Component {
       this.setState({[entryName]: entries});
   }
 
+  submitEdit = (e)=>{
+    e.preventDefault()
+    console.log("submit");
+  }
+
+  cancelEdit = (e)=>{
+    
+  }
+
   render() {
+    
     const methods = {
       handleChange: this.handleChange,
       changeForm: this.changeForm,
@@ -108,7 +126,8 @@ class App extends Component {
       addEducationEntry: this.addEducationEntry,
       addPracticalEntry: this.addPracticalEntry,
       deleteEntry: this.deleteEntry,
-      toggleEditStatus: this.toggleEditStatus
+      toggleEditStatus: this.toggleEditStatus,
+      submitEdit: this.submitEdit
     }
     
 

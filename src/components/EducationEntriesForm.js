@@ -1,5 +1,4 @@
 import React from "react";
-import DateItem from "./DateItem";
 import FormHeader from "./FormHeader";
 import EducationInfoForm from "./EducationInfoForm";
 import uniqid from "uniqid"
@@ -14,7 +13,7 @@ const EducationEntriesForm = (props)=>{
             <ul id="education-entries-container">
                 {educationEntries.map(entry=>{
                     return (
-                        <li className="educational-experience-form-container">
+                        <li className="educational-experience-form-container" key={uniqid()}>
                             <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
                         </li>
                     );

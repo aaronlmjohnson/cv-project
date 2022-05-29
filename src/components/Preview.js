@@ -11,7 +11,6 @@ const Preview = (props)=>{
          phone: props.state.phone,
          contactInfoPresent: props.state.contactInfoPresent
         };
-    const {handleChange, deleteEntry, toggleEditStatus} = props.methods;
 
     return(
         
