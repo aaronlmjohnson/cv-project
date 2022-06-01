@@ -4,7 +4,6 @@ import EducationEntries from "./EducationEntries";
 
 const EducationSection = (props)=>{
     const { educationEntries } = props.state;
-    const {deleteEntry, toggleEditStatus} = props.methods;
 
     const displayHeader = ()=>{
         if(educationEntries.length > 0)

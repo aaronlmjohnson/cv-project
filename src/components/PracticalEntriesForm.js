@@ -1,11 +1,10 @@
 import React from "react";
-import DateItem from "./DateItem";
 import FormHeader from "./FormHeader";
 import PracticalInfoForm from "./PracticalInfoForm";
-import uniqid from "uniqid"
 
 const PracticalEntriesForm = (props)=>{
-    const {addPracticalEntry, handleEntryChange, practicalEntries} = props
+    const { practicalEntries} = props.state
+    const {addPracticalEntry, handleEntryChange} = props.methods
 
     return(
         <div id="practical-experience-entries-form-container">

@@ -5,7 +5,7 @@ const EditEducationEntryForm = (props)=>{
     const {handleEntryChange, submitEdit} = props.methods
     
     return(
-        <form className="educational-experience-form" onSubmit={(e)=>{props.methods.toggleEditStatus(e, entryInfo.id, "educationEntries")} }>
+        <form className="educational-experience-form" onSubmit={(e)=>{submitEdit(e, entryInfo.id, "educationEntries")} }>
             <ul className="educational-experience-form-items">
                 <li className="form-item">
                     <label htmlFor={"school"}> {"School:"} </label>

@@ -16,12 +16,22 @@ class App extends Component {
       educationEntries: [
           {school:"University of Arkansas",
         degree:"Music",
-        schoolStartDate:"2008-8-20",
-        schoolEndDate:"2012-5-20",
+        schoolStartDate:"2008-08-20",
+        schoolEndDate:"2012-05-20",
         id: uniqid(),
         isBeingEdited: false}
     ],
-      practicalEntries:[]
+      practicalEntries:[
+        {
+          company:"K-Mart",
+          position:"Sale Associate",
+          workStartDate:"2013-03-06",
+          workEndDate:"2014-01-01",
+          tasks:"stocked shelves, unloaded trucks, cash register, garden center",
+          id: uniqid(),
+          isBeingEdited: false
+        }
+      ]
     }
 //,
     this.changeForm = this.changeForm.bind(this);
@@ -93,6 +103,7 @@ class App extends Component {
   }
 
   deleteEntry = (e, entriesName)=>{
+    console.log(e.target.parentNode.getAttribute('react-key'));
     this.setState( prevState =>{
       const key = e.target.parentNode.getAttribute('react-key');
       const filteredEntries = prevState[entriesName].filter( entry => entry.id !== key);
@@ -108,9 +119,9 @@ class App extends Component {
       this.setState({[entryName]: entries});
   }
 
-  submitEdit = (e)=>{
+  submitEdit = (e, key, entryName)=>{
     e.preventDefault()
-    console.log("submit");
+    this.toggleEditStatus(e, key, entryName);
   }
 
   cancelEdit = (e)=>{

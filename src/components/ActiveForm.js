@@ -13,13 +13,8 @@ const ActiveForm = (props)=>{
         if(activeForm === "education")
             return <EducationEntriesForm state={props.state} methods={props.methods}/>
         
-        // if(activeForm === "practical") 
-        //     return <PracticalEntriesForm 
-        //                 addPracticalEntry = {addPracticalEntry}
-        //                 handleEntryChange = {handleEntryChange}
-        //                 practicalEntries = {practicalEntries}
-
-        //             />
+        if(activeForm === "practical") 
+            return <PracticalEntriesForm state={props.state} methods={props.methods}/>
         return <Preview state ={props.state} methods={props.methods}/>
     }
     return(

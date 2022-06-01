@@ -1,7 +1,6 @@
 import React from "react";
 import FormHeader from "./FormHeader";
 import EducationInfoForm from "./EducationInfoForm";
-import uniqid from "uniqid"
 
 const EducationEntriesForm = (props)=>{
     const { educationEntries} = props.state
@@ -13,7 +12,7 @@ const EducationEntriesForm = (props)=>{
             <ul id="education-entries-container">
                 {educationEntries.map(entry=>{
                     return (
-                        <li className="educational-experience-form-container" key={uniqid()}>
+                        <li className="educational-experience-form-container">
                             <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
                         </li>
                     );

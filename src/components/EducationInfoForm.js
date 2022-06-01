@@ -1,12 +1,10 @@
 import React from "react";
-
 const EducationInfoForm = (props)=>{
     const {entryInfo, handleEntryChange} = props
-
     return(
         <form className="educational-experience-form">
             <ul className="educational-experience-form-items">
-                <li className="form-item">
+                <li className="form-item" >
                     <label htmlFor={"school"}> {"School:"} </label>
                     <input type="text" name={"school"} onChange={(e)=>{handleEntryChange(e, entryInfo.id, "educationEntries")}} value={entryInfo.school}/>
                 </li>

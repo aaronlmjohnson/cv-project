@@ -25,7 +25,6 @@ const EducationEntries = (props)=>{
 
 
     return educationExperience.map((entry)=>{
-        console.log(entry.isBeingEdited)
         return(
                 displayEntry(entry)
         ) 
