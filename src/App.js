@@ -103,7 +103,6 @@ class App extends Component {
   }
 
   deleteEntry = (e, entriesName)=>{
-    console.log(e.target.parentNode.getAttribute('react-key'));
     this.setState( prevState =>{
       const key = e.target.parentNode.getAttribute('react-key');
       const filteredEntries = prevState[entriesName].filter( entry => entry.id !== key);

@@ -19,7 +19,7 @@ const EducationEntries = (props)=>{
             )
         }
         else{
-            return (<EditEducationEntryForm entryInfo ={entry} methods={props.methods}/>)
+            return (<EditEducationEntryForm entryInfo ={entry} methods={props.methods} key={entry.id}/>)
         }
     }
 

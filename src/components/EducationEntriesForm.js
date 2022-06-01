@@ -12,7 +12,7 @@ const EducationEntriesForm = (props)=>{
             <ul id="education-entries-container">
                 {educationEntries.map(entry=>{
                     return (
-                        <li className="educational-experience-form-container">
+                        <li className="educational-experience-form-container" key={entry.id}>
                             <EducationInfoForm entryInfo = {entry} handleEntryChange = {handleEntryChange} key={entry.id}/>
                         </li>
                     );

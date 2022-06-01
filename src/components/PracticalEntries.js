@@ -20,7 +20,7 @@ const PracticalEntries = (props)=>{
             )
         }
         else{
-            return (<EditPracticalInfoForm entryInfo ={entry} methods={props.methods}/>)
+            return (<EditPracticalInfoForm entryInfo ={entry} methods={props.methods} key={entry.id}/>)
         }
     }
 
